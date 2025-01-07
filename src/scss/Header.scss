@@ -1,0 +1,64 @@
+.container-structure {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.header-container {
+  @extend .container-structure;
+  align-items: center;
+  height: 12vh;
+}
+
+.navigation-container {
+  @extend .container-structure;
+  align-items: center;
+  gap: 1.5rem;
+  width: 30%;
+}
+
+.active-tab,
+.tab {
+  text-decoration: none;
+  color: inherit;
+}
+
+.active-tab {
+  border: 1.2px solid black;
+  border-radius: 35px;
+  padding: 2% 7%;
+  font-weight: 600;
+}
+
+.auth-container {
+  @extend .container-structure;
+  height: 50%;
+  width: 12%;
+}
+
+.login-button {
+  background-color: white;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.register-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  background-color: black;
+  border: none;
+  border-radius: 28px;
+  padding: 0 15%;
+  cursor: pointer;
+}
+
+.seperator-line {
+  width: 1px;
+  height: 40%;
+  background-color: black;
+  margin: auto;
+}
