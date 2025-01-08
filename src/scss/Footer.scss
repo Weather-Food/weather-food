@@ -1,0 +1,16 @@
+.flex-structure {
+  display: flex;
+  align-items: center;
+}
+.footer-container {
+  @extend .flex-structure;
+  justify-content: space-between;
+  height: 12vh;
+  padding: 0 5%;
+  background-color: black;
+  color: white;
+}
+
+.right-container {
+  @extend .flex-structure;
+}
