@@ -4,6 +4,7 @@
 }
 .footer-container {
   @extend .flex-structure;
+  margin-top: auto;
   justify-content: space-between;
   height: 12vh;
   padding: 0 5%;

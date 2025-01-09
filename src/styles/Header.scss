@@ -33,10 +33,11 @@
 .auth-container {
   @extend .container-structure;
   height: 50%;
-  width: 12%;
+  width: 13%;
 }
 
 .login-button {
+  font-size: 1rem;
   background-color: white;
   font-weight: 500;
   border: none;
@@ -44,6 +45,7 @@
 }
 
 .register-button {
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
