@@ -1,20 +1,51 @@
 import React, { useEffect, useState } from "react";
 import "./Hourly.scss";
 
-// API 응답 타입 정의
 interface WeatherData {
-  time: string; // 시간대 정보 (e.g., "2024-12-30 10:00:00")
-  temperature: number; // 온도 정보
-  weather: string; // 날씨 상태 (e.g., "Clear", "Rainy", "Cloudy")
+  time: string; // 시간
+  temperature: number; // 온도
+  weather: string; // 날씨
+  windSpeed: number; // 풍량
+  humidity: number; // 습도
 }
 
 // 목 데이터
 const mockWeatherData: WeatherData[] = [
-  { time: "2025-01-07T09:00:00", temperature: 5, weather: "Clear" },
-  { time: "2025-01-07T12:00:00", temperature: 7, weather: "Clouds" },
-  { time: "2025-01-07T15:00:00", temperature: 6, weather: "Rain" },
-  { time: "2025-01-07T18:00:00", temperature: 4, weather: "Clear" },
-  { time: "2025-01-07T21:00:00", temperature: 2, weather: "Clouds" },
+  {
+    time: "2025-01-07T09:00:00",
+    temperature: 5,
+    weather: "Clear",
+    windSpeed: 5,
+    humidity: 65,
+  },
+  {
+    time: "2025-01-07T12:00:00",
+    temperature: 7,
+    weather: "Clouds",
+    windSpeed: 10,
+    humidity: 70,
+  },
+  {
+    time: "2025-01-07T15:00:00",
+    temperature: 6,
+    weather: "Rain",
+    windSpeed: 15,
+    humidity: 80,
+  },
+  {
+    time: "2025-01-07T18:00:00",
+    temperature: 4,
+    weather: "Clear",
+    windSpeed: 5,
+    humidity: 60,
+  },
+  {
+    time: "2025-01-07T21:00:00",
+    temperature: 2,
+    weather: "Clouds",
+    windSpeed: 8,
+    humidity: 75,
+  },
 ];
 
 const Hourly: React.FC = () => {
@@ -22,11 +53,9 @@ const Hourly: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // 목 데이터를 가져오는 로직 추가
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        // 실제 API 호출이 아니라 목 데이터를 사용
         setLoading(true);
         await new Promise((resolve) => setTimeout(resolve, 1000)); // 로딩 효과 시뮬레이션
         setWeatherData(mockWeatherData);
@@ -40,7 +69,6 @@ const Hourly: React.FC = () => {
     fetchWeatherData();
   }, []);
 
-  // 날씨 상태에 따라 이미지 경로 반환
   const getWeatherImage = (weather: string): string => {
     switch (weather.toLowerCase()) {
       case "clear":
@@ -54,6 +82,9 @@ const Hourly: React.FC = () => {
     }
   };
 
+  // 현재 날씨 데이터
+  const currentWeather = weatherData[0];
+
   return (
     <div className="hourly-container">
       <h2>Hourly Weather Forecast</h2>
@@ -62,27 +93,49 @@ const Hourly: React.FC = () => {
       ) : error ? (
         <p className="error">{error}</p>
       ) : (
-        <div className="hourly-grid">
-          {weatherData.map((data, index) => (
-            <div key={index} className="hourly-card">
+        <>
+          {/* 현재 날씨 표시 */}
+          {currentWeather && (
+            <div className="current-weather">
+              <h3>5:19PM</h3>
               <img
-                src={getWeatherImage(data.weather)}
-                alt={data.weather}
-                className="weather-image"
+                src={getWeatherImage(currentWeather.weather)}
+                alt={currentWeather.weather}
+                className="current-weather-image"
               />
-              <div className="hourly-info">
-                <p>
-                  {new Date(data.time).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
+              <div className="current-weather-info">
+                <p className="current-temperature">
+                  {currentWeather.temperature}°C
                 </p>
-                <p>{data.temperature}°C</p>
-                <p>{data.weather}</p>
+                <p>{currentWeather.weather}</p>
+                <p>Wind: {currentWeather.windSpeed} km/h</p>
+                <p>Humidity: {currentWeather.humidity}%</p>
               </div>
             </div>
-          ))}
-        </div>
+          )}
+          {/* 시간대별 날씨 표시 */}
+          <div className="hourly-grid">
+            {weatherData.map((data, index) => (
+              <div key={index} className="hourly-card">
+                <img
+                  src={getWeatherImage(data.weather)}
+                  alt={data.weather}
+                  className="weather-image"
+                />
+                <div className="hourly-info">
+                  <p>
+                    {new Date(data.time).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </p>
+                  <p>{data.temperature}°C</p>
+                  <p>{data.weather}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
