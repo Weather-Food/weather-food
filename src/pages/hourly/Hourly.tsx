@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Hourly.scss";
+import { CurrentWeather } from "../../components/hourly/CurrentWeather";
+import { HourlyWeather } from "../../components/hourly/HourlyWeather";
 
 interface WeatherData {
   time: string; // 시간
@@ -95,45 +97,16 @@ const Hourly: React.FC = () => {
       ) : (
         <>
           {/* 현재 날씨 표시 */}
-          {currentWeather && (
-            <div className="current-weather">
-              <h3>5:19PM</h3>
-              <img
-                src={getWeatherImage(currentWeather.weather)}
-                alt={currentWeather.weather}
-                className="current-weather-image"
-              />
-              <div className="current-weather-info">
-                <p className="current-temperature">
-                  {currentWeather.temperature}°C
-                </p>
-                <p>{currentWeather.weather}</p>
-                <p>Wind: {currentWeather.windSpeed} km/h</p>
-                <p>Humidity: {currentWeather.humidity}%</p>
-              </div>
-            </div>
-          )}
+          <CurrentWeather
+            getWeatherImage={getWeatherImage}
+            currentWeather={currentWeather}
+          />
           {/* 시간대별 날씨 표시 */}
           <div className="hourly-grid">
-            {weatherData.map((data, index) => (
-              <div key={index} className="hourly-card">
-                <img
-                  src={getWeatherImage(data.weather)}
-                  alt={data.weather}
-                  className="weather-image"
-                />
-                <div className="hourly-info">
-                  <p>
-                    {new Date(data.time).toLocaleTimeString([], {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                  </p>
-                  <p>{data.temperature}°C</p>
-                  <p>{data.weather}</p>
-                </div>
-              </div>
-            ))}
+            <HourlyWeather
+              getWeatherImage={getWeatherImage}
+              weatherData={weatherData}
+            />
           </div>
         </>
       )}
