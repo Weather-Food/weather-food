@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../scss/Header.scss";
+import "../styles/Header.scss";
 
 const Header = () => {
   const getActiveClass = ({ isActive }: { isActive: boolean }): string => {
