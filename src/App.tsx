@@ -1,6 +1,4 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.scss";
 import Home from "./pages/Home";
 import { Header, Footer } from "./components";
 import Hourly from "./pages/hourly/Hourly";
