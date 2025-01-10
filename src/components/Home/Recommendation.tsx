@@ -1,11 +1,7 @@
-import React from 'react';
+import "../../styles/Home/Recommendation.scss";
 
 const Recommendation = () => {
-  return (
-    <div>
-      
-    </div>
-  );
+  return <div className="recommendation-container"></div>;
 };
 
 export default Recommendation;

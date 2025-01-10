@@ -1,7 +1,23 @@
+.flex-structure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .background-image {
-  display: block;
-  width: 100vw;
+  background-image: url("../../../public/Home/rain.webp");
+  background-size: 100%;
   height: calc(100vh - 12vh);
-  margin: 0;
-  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  @extend .flex-structure;
+  position: relative;
+}
+
+.weather-recommendation--container {
+  display: flex;
+  position: relative;
+  padding: 3% 5%;
+  width: 100%;
+  height: 80%;
 }
