@@ -5,26 +5,33 @@ const WeatherSection = () => {
     <section className="weather-container">
       <div className="location-time--container">
         <div className="location-container">
-          <img className="location-icon" />
-          <p className="location">지역명</p>
+          <img
+            className="location-icon"
+            src="./Home/location.svg"
+            alt="location"
+          />
+          <strong className="location">인천</strong>
         </div>
         <p className="time">Today 12:32 PM</p>
       </div>
       <div className="temperature-container">
-        <p className="temperature">11도</p>
-        <p>Rain</p>
+        <p className="temperature">
+          11<span className="temperature-icon">°</span>
+        </p>
+        <p className="state">Rain</p>
       </div>
       <div className="condition-container">
         <div className="hpa-container">
-          <img />
+          {/* 여기 hpa 정보는 다른 걸로 대체 예정 */}
+          <img src="./Home/wind.svg" alt="hpa" />
           <p>720hpa</p>
         </div>
         <div className="pricipitation-container">
-          <img />
+          <img src="./Home/raindrop.svg" alt="pricipitation" />
           <p>32%</p>
         </div>
         <div className="wind-container">
-          <img />
+          <img src="./Home/wind.svg" alt="wind" />
           <p>12km/h</p>
         </div>
       </div>
