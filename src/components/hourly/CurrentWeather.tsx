@@ -1,4 +1,5 @@
 import React from "react";
+import "./CurrentWeather.scss";
 
 interface WeatherData {
   time: string; // 시간
@@ -21,19 +22,29 @@ export const CurrentWeather: React.FC<CurrentWeatherProps> = ({
     <>
       {currentWeather && (
         <div className="current-weather">
-          <h3>5:19PM</h3>
           <img
             src={getWeatherImage(currentWeather.weather)}
             alt={currentWeather.weather}
             className="current-weather-image"
           />
+          <p className="current-temperature">{currentWeather.temperature}°C</p>
           <div className="current-weather-info">
-            <p className="current-temperature">
-              {currentWeather.temperature}°C
-            </p>
+            <p>5:19PM</p>
             <p>{currentWeather.weather}</p>
-            <p>Wind: {currentWeather.windSpeed} km/h</p>
-            <p>Humidity: {currentWeather.humidity}%</p>
+            <p>
+              <img
+                src={"/svg/hourly/windy-cloudy.svg"}
+                className="current-windSpeed-image"
+              />
+              : {currentWeather.windSpeed} km/h
+            </p>
+            <p>
+              <img
+                src={"/svg/hourly/humidity-rain.svg"}
+                className="current-humidity-image"
+              />
+              : {currentWeather.humidity}%
+            </p>
           </div>
         </div>
       )}

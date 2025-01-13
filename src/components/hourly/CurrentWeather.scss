@@ -1,0 +1,32 @@
+.current-weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .current-weather-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .current-temperature {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: auto 0;
+  }
+  .current-weather-info {
+    p {
+      margin: 0.2rem 0;
+    }
+  }
+  .current-windSpeed-image {
+    width: 20px;
+    height: 20px;
+  }
+
+  .current-humidity-image {
+    width: 20px;
+    height: 20px;
+  }
+}
