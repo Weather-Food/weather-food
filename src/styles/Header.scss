@@ -64,3 +64,27 @@
   background-color: black;
   margin: auto;
 }
+
+// 모바일 화면
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 2%;
+  }
+  .navigation-container {
+    width: 48%;
+  }
+
+  .navigation-container,
+  .login-button,
+  .register-button {
+    font-size: 0.8rem;
+  }
+
+  .auth-container {
+    width: 30%;
+  }
+
+  .register-button {
+    padding: 0 10%;
+  }
+}

@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+  margin: 5%;
 }
 
 .location-time--container {
@@ -24,6 +25,7 @@
   flex: 1;
   @extend .flex-row-structure;
   gap: 10px;
+  align-items: center;
 }
 
 .time {
@@ -61,5 +63,34 @@
 .pricipitation-container,
 .wind-container {
   @extend .flex-row-structure;
+  align-items: center;
   gap: 10px;
+}
+
+// 모바일 화면
+@media (max-width: 768px) {
+  .weather-container {
+    width: 90%;
+  }
+
+  .location-time--container {
+    font-size: 1rem;
+  }
+  .temperature {
+    font-size: 3rem;
+  }
+  .state {
+    font-size: 1rem;
+  }
+  .condition-container {
+    font-size: 1rem;
+  }
+
+  .location-icon,
+  .hpa-icon,
+  .pricipitation-icon,
+  .wind-icon {
+    width: 20px;
+    height: 20px;
+  }
 }

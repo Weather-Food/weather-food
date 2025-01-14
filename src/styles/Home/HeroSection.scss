@@ -24,3 +24,16 @@
   height: 80%;
   gap: 7%;
 }
+
+// 모바일 화면
+@media (max-width: 768px) {
+  .background-image {
+    background-size: cover;
+  }
+
+  .weather-recommendation--container {
+    flex-direction: column;
+    height: 50%;
+    padding: 5%;
+  }
+}

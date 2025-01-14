@@ -15,3 +15,10 @@
 .right-container {
   @extend .flex-structure;
 }
+
+// 모바일 화면
+@media (max-width: 768px) {
+  .footer-container {
+    font-size: 0.8rem;
+  }
+}

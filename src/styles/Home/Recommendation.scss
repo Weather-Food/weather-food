@@ -3,32 +3,65 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
-  gap: 10px;
-  // background-color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(202, 209, 216, 0.5);
+  gap: 15px;
+  background-color: rgb(250, 250, 250);
   border-radius: 30px;
-  width: 70%;
-  height: 85%;
+  height: 75%;
+  margin: 5%;
 }
 
 .statement {
+  display: flex;
+  align-items: center;
   font-size: 1.25rem;
   font-weight: 600;
-  color: white;
+  color: rgb(55, 55, 55);
+  color: #4b4b4b;
+  gap: 10px;
+  padding: 3% 5%;
   margin: 0;
-  padding: 5%;
 }
 
 .recommended-food--container {
   border-radius: 10px;
-  margin: 5%;
-  // padding: 5%;
-  width: 90%;
-  height: 50%;
+  padding: 5%;
+  height: 40%;
+  background-color: rgb(247, 244, 248);
 }
 
 .more-food--container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  padding: 3% 5%;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.more-icon {
+  cursor: pointer;
+}
+
+// 모바일 화면
+@media (max-width: 768px) {
+  .recommendation-container {
+    width: 80%;
+    padding: 2%;
+  }
+  .statement {
+    font-size: 1rem;
+  }
+  .recommended-food--container,
+  .more-food--container {
+    font-size: 0.8rem;
+  }
+  .more-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .statement,
+  .more-food--container {
+    padding: 1% 3%;
+  }
 }
