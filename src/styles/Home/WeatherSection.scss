@@ -1,0 +1,124 @@
+.flex-row-structure {
+  display: flex;
+  flex-direction: row;
+}
+
+.weather-container {
+  flex: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  margin: 5%;
+}
+
+.location-time--container {
+  @extend .flex-row-structure;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.location-container {
+  flex: 1;
+  @extend .flex-row-structure;
+  gap: 10px;
+  align-items: center;
+}
+
+.time {
+  flex: 1;
+  text-align: end;
+}
+
+.temperature-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperature {
+  font-size: 5.5rem;
+  margin: 0;
+}
+
+.temperature-icon {
+  margin-left: 4px;
+}
+
+.state {
+  font-size: 1.5rem;
+}
+
+.condition-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.hpa-container,
+.pricipitation-container,
+.wind-container {
+  @extend .flex-row-structure;
+  align-items: center;
+  gap: 10px;
+}
+
+// 작은 화면
+@media (max-width: 600px) {
+  .weather-container {
+    width: 90%;
+  }
+
+  .location-time--container {
+    font-size: 0.8rem;
+  }
+  .temperature {
+    font-size: 2.7rem;
+  }
+  .state {
+    font-size: 0.9rem;
+  }
+  .condition-container {
+    font-size: 0.9rem;
+  }
+
+  .location-icon,
+  .hpa-icon,
+  .pricipitation-icon,
+  .wind-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// 중간 크기 화면
+@media (max-width: 1024px) {
+  .weather-container {
+    margin: 3%;
+  }
+
+  .location-time--container {
+    font-size: 1.2rem;
+  }
+  .temperature {
+    font-size: 3.2rem;
+  }
+  .state {
+    font-size: 1.2rem;
+  }
+  .condition-container {
+    font-size: 1.2rem;
+  }
+
+  .location-icon,
+  .hpa-icon,
+  .pricipitation-icon,
+  .wind-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
