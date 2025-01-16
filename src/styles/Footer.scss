@@ -16,9 +16,16 @@
   @extend .flex-structure;
 }
 
-// 모바일 화면
-@media (max-width: 768px) {
+// 작은 화면
+@media (max-width: 600px) {
   .footer-container {
     font-size: 0.8rem;
+  }
+}
+
+// 중간 크기 화면
+@media (max-width: 1024px) {
+  .footer-container {
+    font-size: 0.9rem;
   }
 }

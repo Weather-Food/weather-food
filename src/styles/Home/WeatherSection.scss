@@ -67,30 +67,58 @@
   gap: 10px;
 }
 
-// 모바일 화면
-@media (max-width: 768px) {
+// 작은 화면
+@media (max-width: 600px) {
   .weather-container {
     width: 90%;
   }
 
   .location-time--container {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   .temperature {
-    font-size: 3rem;
+    font-size: 2.7rem;
   }
   .state {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .condition-container {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .location-icon,
   .hpa-icon,
   .pricipitation-icon,
   .wind-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// 중간 크기 화면
+@media (max-width: 1024px) {
+  .weather-container {
+    margin: 3%;
+  }
+
+  .location-time--container {
+    font-size: 1.2rem;
+  }
+  .temperature {
+    font-size: 3.2rem;
+  }
+  .state {
+    font-size: 1.2rem;
+  }
+  .condition-container {
+    font-size: 1.2rem;
+  }
+
+  .location-icon,
+  .hpa-icon,
+  .pricipitation-icon,
+  .wind-icon {
+    width: 25px;
+    height: 25px;
   }
 }
