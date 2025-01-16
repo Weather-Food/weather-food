@@ -22,15 +22,25 @@ export const CurrentWeather: React.FC<CurrentWeatherProps> = ({
     <>
       {currentWeather && (
         <div className="current-weather">
-          <img
-            src={getWeatherImage(currentWeather.weather)}
-            alt={currentWeather.weather}
-            className="current-weather-image"
-          />
-          <p className="current-temperature">{currentWeather.temperature}°C</p>
+          <div>
+            <div className="current-info">
+              <img
+                src={getWeatherImage(currentWeather.weather)}
+                alt={currentWeather.weather}
+                className="current-weather-image"
+              />
+              <p className="current-temperature">
+                {currentWeather.temperature}°C
+              </p>
+            </div>
+            <p className="current-weather-description">
+              {currentWeather.weather}
+            </p>
+          </div>
+
           <div className="current-weather-info">
             <p>5:19PM</p>
-            <p>{currentWeather.weather}</p>
+
             <p>
               <img
                 src={"/svg/hourly/windy-cloudy.svg"}

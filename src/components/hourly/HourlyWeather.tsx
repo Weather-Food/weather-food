@@ -21,18 +21,24 @@ export const HourlyWeather: React.FC<HourlyWeatherProps> = ({
   weatherData,
   getWeatherImage,
 }) => {
+  const currentTime = new Date().getHours();
+  const currentIndex = weatherData.findIndex(
+    (data) => new Date(data.time).getHours() === currentTime
+  );
+
   const settings = {
     dots: true,
     infinite: false,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
+    speed: 800,
+    slidesToShow: 9,
+    slidesToScroll: 9,
+    initialSlide: currentIndex,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 6,
+          slidesToScroll: 6,
           infinite: true,
           dots: true,
         },
@@ -40,8 +46,8 @@ export const HourlyWeather: React.FC<HourlyWeatherProps> = ({
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
     ],
@@ -49,25 +55,35 @@ export const HourlyWeather: React.FC<HourlyWeatherProps> = ({
 
   return (
     <Slider {...settings}>
-      {weatherData.map((data, index) => (
-        <div key={index} className="hourly-card">
-          <div className="hourly-info">
-            <img
-              src={getWeatherImage(data.weather)}
-              alt={data.weather}
-              className="weather-image"
-            />
-            <p className="temperature">{data.temperature}°C</p>
-            <p className="weather">{data.weather}</p>
-            <p className="time">
-              {new Date(data.time).toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
-            </p>
+      {weatherData.map((data, index) => {
+        const dataTime = new Date(data.time).getHours();
+        const isCurrentTime = dataTime === currentTime;
+
+        return (
+          <div
+            key={index}
+            className={`hourly-card ${isCurrentTime ? "current-time" : ""}`}
+          >
+            <div className="hourly-info">
+              <img
+                src={getWeatherImage(data.weather)}
+                alt={data.weather}
+                className="weather-image"
+              />
+              <p className="temperature">{data.temperature}°C</p>
+              <p className="weather">{data.weather}</p>
+              <p className="time">
+                {new Date(data.time)
+                  .toLocaleTimeString([], {
+                    hour: "2-digit",
+                    hour12: false,
+                  })
+                  .replace(":", "시")}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </Slider>
   );
 };

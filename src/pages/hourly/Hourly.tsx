@@ -136,7 +136,7 @@ const Hourly: React.FC = () => {
     const fetchWeatherData = async () => {
       try {
         setLoading(true);
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // 로딩 효과 시뮬레이션
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         setWeatherData(mockWeatherData);
       } catch (err) {
         setError("Failed to load weather data.");
