@@ -1,18 +1,6 @@
 import React from "react";
-import "./CurrentWeather.scss";
-
-interface WeatherData {
-  time: string; // 시간
-  temperature: number; // 온도
-  weather: string; // 날씨
-  windSpeed: number; // 풍량
-  humidity: number; // 습도
-}
-
-interface CurrentWeatherProps {
-  currentWeather: WeatherData;
-  getWeatherImage: (weather: string) => string;
-}
+import "../../styles/Hourly/CurrentWeather.scss";
+import { CurrentWeatherProps } from "./interfaces";
 
 export const CurrentWeather: React.FC<CurrentWeatherProps> = ({
   currentWeather,

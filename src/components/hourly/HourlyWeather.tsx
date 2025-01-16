@@ -2,20 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./HourlyWeather.scss";
-
-interface WeatherData {
-  time: string; // 시간
-  temperature: number; // 온도
-  weather: string; // 날씨
-  windSpeed: number; // 풍량
-  humidity: number; // 습도
-}
-
-interface HourlyWeatherProps {
-  weatherData: WeatherData[];
-  getWeatherImage: (weather: string) => string;
-}
+import "../../styles/Hourly/HourlyWeather.scss";
+import { HourlyWeatherProps } from "./interfaces";
 
 export const HourlyWeather: React.FC<HourlyWeatherProps> = ({
   weatherData,
