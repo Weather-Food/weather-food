@@ -1,0 +1,56 @@
+.container-structure {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.auth-container {
+  @extend .container-structure;
+  height: 50%;
+  width: 13%;
+}
+
+.login-button {
+  font-size: 1rem;
+  background-color: white;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.register-button {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  background-color: black;
+  border: none;
+  border-radius: 28px;
+  padding: 0 15%;
+  cursor: pointer;
+}
+
+.seperator-line {
+  width: 1px;
+  height: 40%;
+  background-color: black;
+  margin: auto;
+}
+
+// 중간 크기 화면
+@media (max-width: 1024px) {
+  .auth-container {
+    width: 17%;
+  }
+
+  .login-button,
+  .register-button {
+    font-size: 0.9rem;
+  }
+
+  .register-button {
+    padding: 0 10%;
+  }
+}

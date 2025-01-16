@@ -1,0 +1,27 @@
+.menu-icon {
+  cursor: pointer;
+}
+
+.mini-menu--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 80%;
+  width: 15%;
+  height: 10%;
+  background-color: rgba(255, 255, 255, 0.971);
+  border: 1.5px solid #4b4b4b;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  z-index: 10;
+}
+
+.menu-login,
+.menu-signin {
+  cursor: pointer;
+  font-weight: 500;
+}

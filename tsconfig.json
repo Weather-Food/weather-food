@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "target": "ESNext",
+    "target": "ES5",
     "lib": ["dom", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "react-jsx"
