@@ -1,0 +1,8 @@
+.food-section--container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 30px;
+  width: 60%;
+  // padding: 3%;
+  // margin: 2%;
+}
