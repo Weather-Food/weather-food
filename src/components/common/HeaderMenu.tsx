@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../styles/HeaderMenu.scss";
+import "../../styles/common/HeaderMenu.scss";
 
 const HeaderMenu = () => {
   const [isClicked, setIsClicked] = useState(false);

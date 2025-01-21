@@ -1,4 +1,4 @@
-import "../styles/HeaderAuth.scss";
+import "../../styles/common/HeaderAuth.scss";
 
 const HeaderAuth = () => {
   return (

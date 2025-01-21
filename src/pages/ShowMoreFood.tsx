@@ -1,21 +1,14 @@
 import "../styles/ShowMoreFood/index.scss";
 
-import BreadCrumb from "../components/ShowMoreFood/FoodBreadCrumb";
-import FoodSection from "../components/ShowMoreFood/FoodSection";
-import WeatherState from "../components/ShowMoreFood/WeatherState";
-import RecommendStatement from "../components/ShowMoreFood/RecommendStatement";
+import LeftNavigation from "../components/common/LeftNavigation";
+import MoreFoodMain from "../components/ShowMoreFood/MoreFoodMain";
+import { cuisines } from "../constants/food";
 
 const ShowMoreFood = () => {
   return (
     <div className="show-more-food--container">
-      <section className="weather-section">
-        <WeatherState />
-        <RecommendStatement />
-      </section>
-      <section className="food-section">
-        <BreadCrumb />
-        <FoodSection />
-      </section>
+      <LeftNavigation title="음식 카테고리" tabs={cuisines} />
+      <MoreFoodMain />
     </div>
   );
 };

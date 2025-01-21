@@ -12,7 +12,7 @@ const WeatherSection = () => {
           />
           <strong className="location">인천</strong>
         </div>
-        <p className="time">Today 12:32 PM</p>
+        <p className="today-time">Today 12:32 PM</p>
       </div>
       <div className="temperature-container">
         <p className="temperature">

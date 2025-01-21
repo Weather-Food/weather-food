@@ -1,28 +1,7 @@
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
 .show-more-food--container {
-  @extend .flex-column;
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(244, 243, 241);
-  // padding: 5%;
-}
-
-.weather-section {
-  @extend .flex-column;
-  justify-content: center;
-  align-items: center;
-  // width: 100%;
-  height: 30%;
-}
-
-.food-section {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  // width: 100%;
-  gap: 5%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(245, 245, 245);
 }

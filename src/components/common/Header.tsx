@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/Header.scss";
+import "../../styles/common/Header.scss";
 import HeaderMenu from "./HeaderMenu";
 import HeaderAuth from "./HeaderAuth";
 
