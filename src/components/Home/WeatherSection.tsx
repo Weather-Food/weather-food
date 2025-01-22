@@ -10,15 +10,15 @@ const WeatherSection = () => {
             src="./Home/location.svg"
             alt="location"
           />
-          <strong className="location">인천</strong>
+          <strong className="location">인천광역시</strong>
         </div>
         <p className="today-time">Today 12:32 PM</p>
       </div>
       <div className="temperature-container">
         <p className="temperature">
-          11<span className="temperature-icon">°</span>
+          11<span className="temperature-icon">°C</span>
         </p>
-        <p className="state">Rain</p>
+        <p className="state">흐림</p>
       </div>
       <div className="condition-container">
         <div className="hpa-container">
@@ -36,7 +36,7 @@ const WeatherSection = () => {
         </div>
         <div className="wind-container">
           <img className="wind-icon" src="./Home/wind.svg" alt="wind" />
-          <p>12km/h</p>
+          <p>3m/s</p>
         </div>
       </div>
     </section>

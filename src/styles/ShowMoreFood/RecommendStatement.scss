@@ -1,12 +1,15 @@
-// .recommend-statement--container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100vw;
-//   height: 30vh;
-//   background-color: rgb(200, 230, 242, 0.7);
-// }
+.recommend-statement--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 5%;
+  padding: 2%;
+  background-color: rgb(255, 255, 255);
+  background-color: rgb(238, 246, 255);
+  border-radius: 10px;
+}
 
-// .recommend-statement {
-//   font-size: 1.5rem;
-// }
+.recommend-statement {
+  font-weight: 600;
+  color: rgb(58, 88, 186);
+}

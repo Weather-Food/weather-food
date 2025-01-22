@@ -1,1 +1,1 @@
-export const cuisines: string[] = ["한식", "중식", "일식", "양식", "디저트"];
+export const cuisines: string[] = ["전체", "한식", "중식", "일식", "양식"];

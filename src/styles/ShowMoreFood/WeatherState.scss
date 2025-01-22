@@ -1,4 +1,19 @@
-// .weather-info--container {
-//   display: flex;
-//   flex-direction: row;
-// }
+.weather-state--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 10%;
+  padding: 5%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.weather-left-state {
+  display: flex;
+  flex-direction: row;
+}
+
+.temp {
+  font-size: 1.25rem;
+}

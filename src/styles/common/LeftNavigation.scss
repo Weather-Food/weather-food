@@ -1,8 +1,26 @@
-.left-navigation--container {
+.flex-column {
   display: flex;
   flex-direction: column;
-  width: 10%;
+}
+
+.left-navigation--container {
+  @extend .flex-column;
+  width: 15%;
   height: 100vh;
-  background-color: rgb(249, 250, 251);
+  background-color: rgb(255, 255, 255);
   padding: 2%;
+  color: rgb(85, 94, 108);
+}
+
+.navigation-title {
+  font-weight: 600;
+}
+
+.tabs-container {
+  @extend .flex-column;
+  gap: 10%;
+  padding: 5%;
+  font-weight: 500;
+  text-shadow: 0.5px 0.5px 0.1px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.02em;
 }
