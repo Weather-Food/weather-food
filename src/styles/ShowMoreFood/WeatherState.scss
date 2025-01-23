@@ -1,17 +1,34 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .weather-state--container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  height: 10%;
+  height: 7%;
   padding: 5%;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
 .weather-left-state {
-  display: flex;
-  flex-direction: row;
+  @extend .flex-row;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperature-state,
+.weather-right-state {
+  @extend .flex-col;
+  gap: 10px;
 }
 
 .temp {

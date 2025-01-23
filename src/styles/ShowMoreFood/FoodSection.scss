@@ -1,10 +1,7 @@
-// .food-section--container {
-//   width: 70%;
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   grid-auto-rows: auto;
-//   justify-items: center;
-//   align-items: center;
-//   gap: 50px 1px;
-//   padding: 0 5%;
-// }
+.food-section--container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 45vh);
+  width: 100%;
+  gap: 5% 3%;
+}

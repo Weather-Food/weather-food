@@ -10,14 +10,14 @@ const WeatherState = () => {
             11<span className="temperature-icon">°C</span>
           </strong>
           {/* 현재 위치와 날씨 상태 삽입하기 */}
-          <p>인천광역시 - 흐림</p>
+          <p className="location-state">인천광역시 - 흐림</p>
         </div>
       </div>
       <div className="weather-right-state">
-        <p>
+        <p className="humidity">
           습도: <span>65</span>%
         </p>
-        <p>
+        <p className="wind-speed">
           바람: <span>3</span>m/s
         </p>
       </div>
