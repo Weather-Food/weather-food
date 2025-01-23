@@ -13,6 +13,6 @@
     "resolveJsonModule": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "global.d.ts"],
   "exclude": ["node_modules"]
 }

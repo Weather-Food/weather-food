@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/Hourly/Hourly.scss";
+import styles from "../../styles/Hourly/Hourly.module.scss";
 import { CurrentWeather } from "../../components/hourly/CurrentWeather";
 import { HourlyWeather } from "../../components/hourly/HourlyWeather";
 import { WeatherData } from "../../components/hourly/interfaces";
@@ -43,12 +43,12 @@ const Hourly: React.FC = () => {
   const currentWeather = weatherData[0];
 
   return (
-    <div className="hourly-container">
+    <div className={styles.hourly_container}>
       <h2>Hourly Weather Forecast</h2>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p className="error">{error}</p>
+        <p className={styles.error}>{error}</p>
       ) : (
         <>
           {/* 현재 날씨 표시 */}
@@ -57,7 +57,7 @@ const Hourly: React.FC = () => {
             currentWeather={currentWeather}
           />
           {/* 시간대별 날씨 표시 */}
-          <div className="hourly-grid">
+          <div className={styles.hourly_grid}>
             <HourlyWeather
               getWeatherImage={getWeatherImage}
               weatherData={weatherData}

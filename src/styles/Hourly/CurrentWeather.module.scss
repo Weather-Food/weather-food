@@ -1,42 +1,44 @@
-.current-weather {
+.currentWeather {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
 
-  .current-info {
+  .currentInfo {
     display: flex;
     align-items: center;
   }
 
-  .current-weather-description {
+  .currentWeatherDescription {
     text-align: center;
     margin: 0.2rem 0;
   }
 
-  .current-weather-image {
+  .currentWeatherImage {
     width: 80px;
     height: 80px;
   }
 
-  .current-temperature {
+  .currentTemperature {
     font-size: 5rem;
     font-weight: bold;
     margin: auto 0;
     color: #535353;
   }
-  .current-weather-info {
+
+  .currentWeatherInfo {
     p {
       margin: 0.2rem 0;
     }
   }
-  .current-windSpeed-image {
+
+  .currentWindSpeedImage {
     width: 20px;
     height: 20px;
   }
 
-  .current-humidity-image {
+  .currentHumidityImage {
     width: 20px;
     height: 20px;
   }
@@ -44,42 +46,42 @@
 
 /* 미디어 쿼리 */
 @media (max-width: 1024px) {
-  .current-weather-image {
+  .currentWeatherImage {
     width: 75px !important;
     height: 75px !important;
   }
 
-  .current-temperature {
+  .currentTemperature {
     font-size: 4rem !important;
   }
 
-  .current-windSpeed-image {
+  .currentWindSpeedImage {
     width: 15px !important;
     height: 15px !important;
   }
 
-  .current-humidity-image {
+  .currentHumidityImage {
     width: 15px !important;
     height: 15px !important;
   }
 }
 
 @media (max-width: 600px) {
-  .current-weather-image {
+  .currentWeatherImage {
     width: 70px !important;
     height: 70px !important;
   }
 
-  .current-temperature {
+  .currentTemperature {
     font-size: 3rem !important;
   }
 
-  .current-windSpeed-image {
+  .currentWindSpeedImage {
     width: 10px !important;
     height: 10px !important;
   }
 
-  .current-humidity-image {
+  .currentHumidityImage {
     width: 10px !important;
     height: 10px !important;
   }
