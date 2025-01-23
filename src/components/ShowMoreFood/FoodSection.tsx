@@ -11,6 +11,12 @@ const FoodSection = () => {
       <EachFood />
       <EachFood />
       <EachFood />
+      <EachFood />
+      <EachFood />
+      <EachFood />
+      <EachFood />
+      <EachFood />
+      <EachFood />
     </section>
   );
 };

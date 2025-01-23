@@ -14,15 +14,22 @@
   align-items: center;
   box-sizing: border-box;
   height: 7%;
-  padding: 5%;
+  padding: 3%;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
 .weather-left-state {
   @extend .flex-row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 1%;
+  width: 20%;
+}
+
+.weather-icon {
+  width: 58px;
+  height: 58px;
 }
 
 .temperature-state,

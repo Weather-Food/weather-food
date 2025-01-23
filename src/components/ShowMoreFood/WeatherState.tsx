@@ -4,7 +4,7 @@ const WeatherState = () => {
   return (
     <section className="weather-state--container">
       <div className="weather-left-state">
-        <img className="weather-icon" />
+        <img className="weather-icon" src="./svg/hourly/cloudy.svg" />
         <div className="temperature-state">
           <strong className="temp">
             11<span className="temperature-icon">°C</span>
