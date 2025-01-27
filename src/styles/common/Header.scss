@@ -1,18 +1,13 @@
-.container-structure {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+@use "../mixins/flex";
 
 .header-container {
-  @extend .container-structure;
+  @include flex.justify(row, space-around);
   align-items: center;
   height: 12vh;
 }
 
 .navigation-container {
-  @extend .container-structure;
-  align-items: center;
+  @include flex.justify-align(row, space-around, center);
   gap: 1.5rem;
   width: 30%;
 }

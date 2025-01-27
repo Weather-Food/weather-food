@@ -1,10 +1,14 @@
 import "../../styles/ShowMoreFood/WeatherState.scss";
 
+// icons
+import { WiDayCloudy } from "react-icons/wi";
+
 const WeatherState = () => {
   return (
     <section className="weather-state--container">
       <div className="weather-left-state">
-        <img className="weather-icon" src="./svg/hourly/cloudy.svg" />
+        {/* 현재 날씨에 맞는 아이콘 배치 */}
+        <WiDayCloudy className="weather-icon" />
         <div className="temperature-state">
           <strong className="temp">
             11<span className="temperature-icon">°C</span>

@@ -1,17 +1,7 @@
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
+@use "../mixins/flex";
 
 .weather-state--container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex.justify-align(row, space-between, center);
   box-sizing: border-box;
   height: 7%;
   padding: 3%;
@@ -20,21 +10,19 @@
 }
 
 .weather-left-state {
-  @extend .flex-row;
-  justify-content: space-between;
-  align-items: center;
+  @include flex.justify-align(row, space-between, center);
   gap: 1%;
   width: 20%;
 }
 
 .weather-icon {
-  width: 58px;
-  height: 58px;
+  width: 70px;
+  height: 70px;
 }
 
 .temperature-state,
 .weather-right-state {
-  @extend .flex-col;
+  @include flex.direction(column);
   gap: 10px;
 }
 

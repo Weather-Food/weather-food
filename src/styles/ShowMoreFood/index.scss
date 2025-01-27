@@ -1,8 +1,8 @@
+@use "../mixins/flex";
+
 .show-more-food--container {
-  display: flex;
-  flex-direction: row;
+  @include flex.align(row, flex-start);
   width: 100%;
   height: auto;
   background-color: rgb(249, 250, 251);
-  align-items: flex-start;
 }

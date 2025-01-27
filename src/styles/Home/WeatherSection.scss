@@ -1,31 +1,23 @@
-.flex-row-structure {
-  display: flex;
-  flex-direction: row;
-}
+@use "../mixins/flex";
 
 .weather-container {
   flex: 1;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  @include flex.justify(column, space-around);
   height: 100%;
   margin: 5%;
 }
 
 .location-time--container {
-  @extend .flex-row-structure;
-  justify-content: space-between;
-  align-items: center;
+  @include flex.justify-align(row, space-between, center);
   font-size: 1.5rem;
   font-weight: 400;
 }
 
 .location-container {
   flex: 1;
-  @extend .flex-row-structure;
+  @include flex.align;
   gap: 10px;
-  align-items: center;
 }
 
 .today-time {
@@ -34,10 +26,7 @@
 }
 
 .temperature-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex.center(column);
 }
 
 .temperature {
@@ -54,16 +43,14 @@
 }
 
 .condition-container {
-  display: flex;
-  justify-content: space-between;
+  @include flex.justify(row, space-between);
   font-size: 1.3rem;
 }
 
 .hpa-container,
 .pricipitation-container,
 .wind-container {
-  @extend .flex-row-structure;
-  align-items: center;
+  @include flex.align;
   gap: 10px;
 }
 

@@ -1,11 +1,7 @@
-.container-structure {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+@use "../mixins/flex";
 
 .auth-container {
-  @extend .container-structure;
+  @include flex.justify(row, space-around);
   height: 50%;
   width: 13%;
 }
@@ -20,9 +16,7 @@
 
 .register-button {
   font-size: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex.center;
   color: white;
   font-weight: 500;
   background-color: black;

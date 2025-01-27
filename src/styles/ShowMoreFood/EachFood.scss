@@ -1,3 +1,5 @@
+@use "../mixins/flex";
+
 .each-food--container {
   width: 48%;
   height: auto;
@@ -17,16 +19,13 @@
 }
 
 .food-introduction {
-  display: flex;
-  flex-direction: column;
+  @include flex.direction(column);
   padding: 4% 3%;
   gap: 15px;
 }
 
 .category-save--container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flex.justify(row, space-between);
 }
 
 .food-subtitle {

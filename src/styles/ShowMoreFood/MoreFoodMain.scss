@@ -1,6 +1,7 @@
+@use "../mixins/flex";
+
 .more-food-main {
-  display: flex;
-  flex-direction: column;
+  @include flex.direction(column);
   width: 80%;
   padding: 2% 4%;
   gap: 20px;

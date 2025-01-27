@@ -1,12 +1,11 @@
+@use "../mixins/flex";
+
 .menu-icon {
   cursor: pointer;
 }
 
 .mini-menu--container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex.center(column);
   gap: 15px;
   position: absolute;
   top: 7.5%;
