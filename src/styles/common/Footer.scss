@@ -1,10 +1,5 @@
 @use "../mixins/flex";
 
-// .flex-structure {
-//   display: flex;
-//   align-items: center;
-// }
-
 .footer-container {
   @include flex.justify-align(row, space-between, center);
   position: relative;
