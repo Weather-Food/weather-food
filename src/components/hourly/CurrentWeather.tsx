@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Hourly/CurrentWeather.scss";
+import styles from "../../styles/Hourly/CurrentWeather.module.scss";
 import { CurrentWeatherProps } from "./interfaces";
 
 export const CurrentWeather: React.FC<CurrentWeatherProps> = ({
@@ -9,37 +9,37 @@ export const CurrentWeather: React.FC<CurrentWeatherProps> = ({
   return (
     <>
       {currentWeather && (
-        <div className="current-weather">
+        <div className={styles.currentWeather}>
           <div>
-            <div className="current-info">
+            <div className={styles.currentInfo}>
               <img
                 src={getWeatherImage(currentWeather.weather)}
                 alt={currentWeather.weather}
-                className="current-weather-image"
+                className={styles.currentWeatherImage}
               />
-              <p className="current-temperature">
+              <p className={styles.currentTemperature}>
                 {currentWeather.temperature}°C
               </p>
             </div>
-            <p className="current-weather-description">
+            <p className={styles.currentWeatherDescription}>
               {currentWeather.weather}
             </p>
           </div>
 
-          <div className="current-weather-info">
+          <div className={styles.currentWeatherInfo}>
             <p>5:19PM</p>
 
             <p>
               <img
                 src={"/svg/hourly/windy-cloudy.svg"}
-                className="current-windSpeed-image"
+                className={styles.currentWindSpeedImage}
               />
               : {currentWeather.windSpeed} km/h
             </p>
             <p>
               <img
                 src={"/svg/hourly/humidity-rain.svg"}
-                className="current-humidity-image"
+                className={styles.currentHumidityImage}
               />
               : {currentWeather.humidity}%
             </p>

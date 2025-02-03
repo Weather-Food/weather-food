@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../styles/Hourly/HourlyWeather.scss";
+import styles from "../../styles/Hourly/HourlyWeather.module.scss";
 import { HourlyWeatherProps } from "./interfaces";
 
 export const HourlyWeather: React.FC<HourlyWeatherProps> = ({
@@ -50,17 +50,19 @@ export const HourlyWeather: React.FC<HourlyWeatherProps> = ({
         return (
           <div
             key={index}
-            className={`hourly-card ${isCurrentTime ? "current-time" : ""}`}
+            className={`${styles.hourlyCard} ${
+              isCurrentTime ? styles.currentTime : ""
+            }`}
           >
-            <div className="hourly-info">
+            <div className={styles.hourlyInfo}>
               <img
                 src={getWeatherImage(data.weather)}
                 alt={data.weather}
-                className="weather-image"
+                className={styles.weatherImage}
               />
-              <p className="temperature">{data.temperature}°C</p>
-              <p className="weather">{data.weather}</p>
-              <p className="time">
+              <p className={styles.temperature}>{data.temperature}°C</p>
+              <p className={styles.weather}>{data.weather}</p>
+              <p className={styles.time}>
                 {new Date(data.time)
                   .toLocaleTimeString([], {
                     hour: "2-digit",
