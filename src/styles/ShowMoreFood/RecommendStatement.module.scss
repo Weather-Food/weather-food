@@ -1,13 +1,15 @@
 @use "../mixins/flex";
 
 .recommendStatement__container {
-  @include flex.justify(column, center);
+  @include flex.justify(row, flex-start);
+  gap: 1%;
   height: 5%;
   padding: 2%;
   background-color: rgb(238, 246, 255);
   border-radius: 10px;
 }
 
+.bulbIcon,
 .recommendStatement {
   font-weight: 600;
   color: rgb(58, 88, 186);
