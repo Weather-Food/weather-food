@@ -1,4 +1,4 @@
-import "../../styles/ShowMoreFood/MoreFoodMain.scss";
+import styles from "../../styles/ShowMoreFood/MoreFoodMain.module.scss";
 
 import FoodSection from "./FoodSection";
 import RecommendStatement from "./RecommendStatement";
@@ -6,7 +6,7 @@ import WeatherState from "./WeatherState";
 
 const MoreFoodMain = () => {
   return (
-    <main className="more-food-main">
+    <main className={styles.moreFoodMain}>
       <WeatherState />
       <RecommendStatement />
       <FoodSection />

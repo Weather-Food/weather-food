@@ -1,4 +1,4 @@
-import "../../styles/common/LeftNavigation.scss";
+import styles from "../../styles/common/LeftNavigation.module.scss";
 import { NavigationProps } from "../../interfaces/navigation";
 import React, { useState } from "react";
 
@@ -15,11 +15,11 @@ const LeftNavigation: React.FC<NavigationProps> = ({ title, tabs }) => {
   const [currentTab, setCurrentTab] = useState<string>(tabs[0]);
 
   const iconMap: NavigationIcon = {
-    "전체": <CiForkAndKnife />,
-    "한식": <FaBowlFood />,
-    "중식": <GiNoodles />,
-    "일식": <PiBowlFoodFill />,
-    "양식": <SiIfood />,
+    전체: <CiForkAndKnife />,
+    한식: <FaBowlFood />,
+    중식: <GiNoodles />,
+    일식: <PiBowlFoodFill />,
+    양식: <SiIfood />,
   };
 
   const clickTabHandler = (tab: string): void => {
@@ -29,15 +29,15 @@ const LeftNavigation: React.FC<NavigationProps> = ({ title, tabs }) => {
   // const showTabIcon = (tab: string):
 
   return (
-    <div className="left-navigation--container">
-      <div className="navigation-title">{title}</div>
-      <section className="tabs-container">
+    <div className={styles.leftNavigation__container}>
+      <div className={styles.navigationTitle}>{title}</div>
+      <section className={styles.tabsContainer}>
         {tabs.map((tab: string) => (
           <div
             className={
               tab === currentTab
-                ? "active-each-tab--container"
-                : "each-tab--container"
+                ? `${styles.activeEachTab__container}`
+                : `${styles.eachTab__container}`
             }
             key={tab}
             onClick={() => clickTabHandler(tab)}

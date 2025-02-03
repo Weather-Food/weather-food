@@ -1,6 +1,6 @@
 @use "../mixins/flex";
 
-.show-more-food--container {
+.showMoreFood__container {
   @include flex.align(row, flex-start);
   width: 100%;
   height: auto;

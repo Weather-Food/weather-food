@@ -1,10 +1,10 @@
 @use "../mixins/flex";
 
-.menu-icon {
+.menuIcon {
   cursor: pointer;
 }
 
-.mini-menu--container {
+.miniMenu__container {
   @include flex.center(column);
   gap: 15px;
   position: absolute;
@@ -19,8 +19,8 @@
   z-index: 10;
 }
 
-.menu-login,
-.menu-signin {
+.menuLogin,
+.menuSignin {
   cursor: pointer;
   font-weight: 500;
 }

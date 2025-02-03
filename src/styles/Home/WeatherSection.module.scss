@@ -1,6 +1,6 @@
 @use "../mixins/flex";
 
-.weather-container {
+.weatherContainer {
   flex: 1;
   color: white;
   @include flex.justify(column, space-around);
@@ -8,24 +8,24 @@
   margin: 5%;
 }
 
-.location-time--container {
+.locationTime__container {
   @include flex.justify-align(row, space-between, center);
   font-size: 1.5rem;
   font-weight: 400;
 }
 
-.location-container {
+.locationContainer {
   flex: 1;
   @include flex.align;
   gap: 10px;
 }
 
-.today-time {
+.todayTime {
   flex: 1;
   text-align: end;
 }
 
-.temperature-container {
+.temperatureContainer {
   @include flex.center(column);
 }
 
@@ -34,7 +34,7 @@
   margin: 0;
 }
 
-.temperature-icon {
+.temperatureIcon {
   margin-left: 4px;
 }
 
@@ -42,25 +42,25 @@
   font-size: 1.5rem;
 }
 
-.condition-container {
+.conditionContainer {
   @include flex.justify(row, space-between);
   font-size: 1.3rem;
 }
 
-.hpa-container,
-.pricipitation-container,
-.wind-container {
+.hpaContainer,
+.pricipitationContainer,
+.windContainer {
   @include flex.align;
   gap: 10px;
 }
 
 // 작은 화면
 @media (max-width: 600px) {
-  .weather-container {
+  .weatherContainer {
     width: 90%;
   }
 
-  .location-time--container {
+  .locationTime__container {
     font-size: 0.8rem;
   }
   .temperature {
@@ -69,14 +69,14 @@
   .state {
     font-size: 0.9rem;
   }
-  .condition-container {
+  .conditionContainer {
     font-size: 0.9rem;
   }
 
-  .location-icon,
-  .hpa-icon,
-  .pricipitation-icon,
-  .wind-icon {
+  .locationIcon,
+  .hpaIcon,
+  .pricipitationIcon,
+  .windIcon {
     width: 18px;
     height: 18px;
   }
@@ -84,11 +84,11 @@
 
 // 중간 크기 화면
 @media (max-width: 1024px) {
-  .weather-container {
+  .weatherContainer {
     margin: 3%;
   }
 
-  .location-time--container {
+  .locationTime__container {
     font-size: 1.2rem;
   }
   .temperature {
@@ -97,14 +97,14 @@
   .state {
     font-size: 1.2rem;
   }
-  .condition-container {
+  .conditionContainer {
     font-size: 1.2rem;
   }
 
-  .location-icon,
-  .hpa-icon,
-  .pricipitation-icon,
-  .wind-icon {
+  .locationIcon,
+  .hpaIcon,
+  .pricipitationIcon,
+  .windIcon {
     width: 25px;
     height: 25px;
   }

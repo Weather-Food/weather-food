@@ -1,15 +1,15 @@
-import "../../styles/ShowMoreFood/EachFood.scss";
+import styles from "../../styles/ShowMoreFood/EachFood.module.scss";
 
 const EachFood = () => {
   return (
-    <div className="each-food--container">
-      <img className="food-image" src="./Home/rain.webp" />
-      <section className="food-introduction">
-        <h3 className="food-title">떡국</h3>
-        <p className="food-subtitle">담백한 국물로 마음을 달래보세요</p>
-        <div className="category-save--container">
-          <div className="category">한식</div>
-          <img className="save-icon" />
+    <div className={styles.eachFood__container}>
+      <img className={styles.foodImage} src="./Home/rain.webp" />
+      <section className={styles.foodIntroduction}>
+        <h3 className={styles.foodTitle}>떡국</h3>
+        <p className={styles.foodSubtitle}>담백한 국물로 마음을 달래보세요</p>
+        <div className={styles.categorySave__container}>
+          <div className={styles.category}>한식</div>
+          <img className={styles.saveIcon} />
         </div>
       </section>
     </div>

@@ -1,6 +1,6 @@
 @use "../mixins/flex";
 
-.weather-state--container {
+.weatherState__container {
   @include flex.justify-align(row, space-between, center);
   box-sizing: border-box;
   height: 7%;
@@ -9,19 +9,19 @@
   border-radius: 10px;
 }
 
-.weather-left-state {
+.weatherLeftState {
   @include flex.justify-align(row, space-between, center);
   gap: 1%;
   width: 20%;
 }
 
-.weather-icon {
+.weatherIcon {
   width: 70px;
   height: 70px;
 }
 
-.temperature-state,
-.weather-right-state {
+.temperatureState,
+.weatherRightState {
   @include flex.direction(column);
   gap: 10px;
 }

@@ -1,6 +1,6 @@
 @use "../mixins/flex";
 
-.recommend-statement--container {
+.recommendStatement__container {
   @include flex.justify(column, center);
   height: 5%;
   padding: 2%;
@@ -8,7 +8,7 @@
   border-radius: 10px;
 }
 
-.recommend-statement {
+.recommendStatement {
   font-weight: 600;
   color: rgb(58, 88, 186);
 }

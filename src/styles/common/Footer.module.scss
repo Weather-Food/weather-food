@@ -1,6 +1,6 @@
 @use "../mixins/flex";
 
-.footer-container {
+.footerContainer {
   @include flex.justify-align(row, space-between, center);
   position: relative;
   margin-top: auto;
@@ -10,20 +10,20 @@
   color: white;
 }
 
-.right-container {
+.rightContainer {
   @include flex.align;
 }
 
 // 작은 화면
 @media (max-width: 600px) {
-  .footer-container {
+  .footerContainer {
     font-size: 0.8rem;
   }
 }
 
 // 중간 크기 화면
 @media (max-width: 1024px) {
-  .footer-container {
+  .footerContainer {
     font-size: 0.9rem;
   }
 }

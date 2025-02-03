@@ -1,24 +1,24 @@
 @use "../mixins/flex";
 
-.header-container {
+.headerContainer {
   @include flex.justify(row, space-around);
   align-items: center;
   height: 12vh;
 }
 
-.navigation-container {
+.navigationContainer {
   @include flex.justify-align(row, space-around, center);
   gap: 1.5rem;
   width: 30%;
 }
 
-.active-tab,
+.activeTab,
 .tab {
   text-decoration: none;
   color: inherit;
 }
 
-.active-tab {
+.activeTab {
   border: 1.5px solid black;
   border-radius: 35px;
   padding: 2% 7%;
@@ -27,7 +27,7 @@
 
 // 모바일 화면
 @media (max-width: 600px) {
-  .navigation-container {
+  .navigationContainer {
     font-size: 0.6rem;
     width: 40%;
   }
@@ -35,7 +35,7 @@
 
 // 중간 크기 화면
 @media (max-width: 1024px) {
-  .navigation-container {
+  .navigationContainer {
     font-size: 0.9rem;
   }
 }

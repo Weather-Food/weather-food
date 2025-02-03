@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../../styles/common/HeaderMenu.scss";
+import styles from "../../styles/common/HeaderMenu.module.scss";
 
 const HeaderMenu = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -35,12 +35,12 @@ const HeaderMenu = () => {
   return (
     <>
       <div className="menu-icon--container" onClick={handleClick}>
-        <img className="menu-icon" src="./Header/menu.svg" alt="menu" />
+        <img className={styles.menuIcon} src="./Header/menu.svg" alt="menu" />
       </div>
       {isClicked ? (
-        <div className="mini-menu--container">
-          <div className="menu-login">로그인</div>
-          <div className="menu-signin">회원가입</div>
+        <div className={styles.miniMenu__container}>
+          <div className={styles.menuLogin}>로그인</div>
+          <div className={styles.menuSignin}>회원가입</div>
         </div>
       ) : null}
     </>

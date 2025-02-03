@@ -1,6 +1,6 @@
 @use "../mixins/flex";
 
-.background-image {
+.backgroundImage {
   @include flex.center;
   background-image: url("../../../public/Home/rain.webp");
   background-size: 100%;
@@ -10,7 +10,7 @@
   position: relative;
 }
 
-.weather-recommendation--container {
+.weatherRecommendation__container {
   @include flex.center;
   position: relative;
   padding: 3% 5%;
@@ -21,11 +21,11 @@
 
 // 작은 화면
 @media (max-width: 600px) {
-  .background-image {
+  .backgroundImage {
     background-size: cover;
   }
 
-  .weather-recommendation--container {
+  .weatherRecommendation__container {
     flex-direction: column;
     height: 50%;
     padding: 5%;
@@ -34,7 +34,7 @@
 
 // 중간 크기 화면
 @media (max-width: 1024px) {
-  .background-image {
+  .backgroundImage {
     background-size: cover;
   }
 }
