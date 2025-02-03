@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import { Header, Footer } from "./components";
 import Hourly from "./pages/hourly/Hourly";
 import ScrollTop from "./components/ScrollTop";
-import RecipeDetail from "./pages/RecipeDetail/RecipeDetail";
 
 const App = () => (
   <>
@@ -12,7 +11,6 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/hourly" element={<Hourly />} />
-      <Route path="/recipeDetail" element={<RecipeDetail />} />
     </Routes>
     <Footer />
   </>
