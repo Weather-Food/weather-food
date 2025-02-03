@@ -11,6 +11,10 @@ const RecipeDetail = () => {
     subtitle: "A tasty and healthy meal",
     servings: 4,
     time: "30 minutes",
+    author: {
+      name: "John Doe",
+      profileImage: "/RecipeDetail/food.jpg",
+    },
     ingredients: [
       "1 cup of ingredient 1",
       "2 cups of ingredient 2",
@@ -19,20 +23,20 @@ const RecipeDetail = () => {
     ],
     steps: [
       {
-        description: "Step 1: Do something with ingredient 1.",
-        image: "/path/to/step1-image.jpg",
+        description: "Do something with ingredient 1.",
+        image: "/RecipeDetail/food.jpg",
       },
       {
-        description: "Step 2: Mix ingredient 2 and ingredient 3.",
-        image: "/path/to/step2-image.jpg",
+        description: "Mix ingredient 2 and ingredient 3.",
+        image: "/RecipeDetail/food.jpg",
       },
       {
-        description: "Step 3: Cook the mixture for 20 minutes.",
-        image: "/path/to/step3-image.jpg",
+        description: "Cook the mixture for 20 minutes.",
+        image: "/RecipeDetail/food.jpg",
       },
       {
-        description: "Step 4: Add ingredient 4 and serve.",
-        image: "/path/to/step4-image.jpg",
+        description: "Add ingredient 4 and serve.",
+        image: "/RecipeDetail/food.jpg",
       },
     ],
   };
@@ -61,53 +65,55 @@ const RecipeDetail = () => {
             className={styles.recipeDetail__image}
           />
           <div className={styles.recipeDetail__info}>
-            <h1 className="recipe-name">{recipe.name}</h1>
-            <h2 className="recipe-subtitle">{recipe.subtitle}</h2>
-            <div className="recipe-meta">
+            <h1 className={styles.recipeDetail__name}>{recipe.name}</h1>
+            <h2 className={styles.recipeDetail__subtitle}>{recipe.subtitle}</h2>
+            <div className={styles.recipeDetail__meta}>
               <p>Servings: {recipe.servings}</p>
               <p>Time: {recipe.time}</p>
-              <button className="favorite-button">찜</button>
+              <button className={styles.favoriteButton}>찜</button>
+            </div>
+            <div className={styles.recipeDetail__author}>
+              <img
+                src={recipe.author.profileImage}
+                alt={recipe.author.name}
+                className={styles.recipeDetail__authorImage}
+              />
+              <p>{recipe.author.name}</p>
             </div>
           </div>
         </div>
-        <button
-          className={`${styles.toggleButton}`}
-          onClick={toggleIngredients}
-        >
-          {showIngredients ? "재료 접기" : "재료 펼치기"}
-        </button>
-        <button className={styles.toggleButton} onClick={toggleSteps}>
-          {showSteps ? "요리 방법 접기" : "요리 방법 펼치기"}
-        </button>
       </div>
+      <button className={styles.toggleButton1} onClick={toggleIngredients}>
+        {showIngredients ? "재료 접기" : "재료 펼치기"}
+      </button>
+
+      {showIngredients && (
+        <div className={styles.recipeDetail__sectionIngredients}>
+          <h3>Ingredients</h3>
+          <ul>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className={styles.recipeDetail__section}>
-        {showIngredients && (
-          <div className={styles.recipeDetail__sectionIngredients}>
-            <h3>Ingredients</h3>
-            <ul>
-              {recipe.ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {showSteps && (
-          <div className={styles.recipeDetail__sectionSteps}>
-            <h3>Steps</h3>
-            <ol>
-              {recipe.steps.map((step, index) => (
-                <li key={index}>
-                  <p>{step.description}</p>
-                  <img
-                    src={step.image}
-                    alt={`Step ${index + 1}`}
-                    className={styles.stepImage}
-                  />
-                </li>
-              ))}
-            </ol>
-          </div>
-        )}
+        <div className={styles.recipeDetail__sectionSteps}>
+          <h3>Steps</h3>
+          <ol>
+            {recipe.steps.map((step, index) => (
+              <li key={index} className={styles.recipeStep}>
+                <p>{step.description}</p>
+                <img
+                  src={step.image}
+                  alt={`Step ${index + 1}`}
+                  className={styles.stepImage}
+                />
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );
