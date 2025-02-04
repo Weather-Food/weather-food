@@ -1,4 +1,5 @@
 @use "../mixins/flex";
+@use "../mixins/responsive" as *;
 
 .recommendationContainer {
   flex: 1;

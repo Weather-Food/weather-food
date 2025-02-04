@@ -1,8 +1,13 @@
 @use "../mixins/flex";
+@use "../mixins/responsive" as *;
 
 .showMoreFood__container {
   @include flex.align(row, flex-start);
   width: 100%;
   height: auto;
   background-color: rgb(249, 250, 251);
+
+  @include responsive(mobile) {
+    @include flex.align(column, flex-start);
+  }
 }

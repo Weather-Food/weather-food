@@ -1,11 +1,21 @@
 @use "../mixins/flex";
+@use "../mixins/responsive" as *;
 
 .eachFood__container {
-  width: 48%;
+  width: calc(50% - 30px);
   height: auto;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   flex-grow: 1;
+
+  @include responsive(mobile) {
+    margin: 1% 10%;
+    font-size: 0.9rem;
+  }
+
+  @include responsive(tablet) {
+    font-size: 0.9rem;
+  }
 }
 
 .foodImage {
