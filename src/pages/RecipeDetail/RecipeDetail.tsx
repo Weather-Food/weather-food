@@ -41,6 +41,30 @@ const RecipeDetail = () => {
     ],
   };
 
+  // 추천 음식 mock 데이터
+  const recommendedFoods = [
+    {
+      image: "/RecipeDetail/food1.jpg",
+      name: "Spaghetti Carbonara",
+      description: "Creamy Italian pasta with bacon and cheese.",
+    },
+    {
+      image: "/RecipeDetail/food2.jpg",
+      name: "Chicken Curry",
+      description: "Spicy and flavorful Indian chicken curry.",
+    },
+    {
+      image: "/RecipeDetail/food3.jpg",
+      name: "Beef Tacos",
+      description: "Mexican tacos with seasoned beef and fresh toppings.",
+    },
+    {
+      image: "/RecipeDetail/food4.jpg",
+      name: "Vegetable Stir Fry",
+      description: "Healthy stir-fried vegetables with a tangy sauce.",
+    },
+  ];
+
   const toggleIngredients = () => {
     setShowIngredients(!showIngredients);
     setShowSteps(false); // 요리 방법 섹션을 닫음
@@ -53,55 +77,60 @@ const RecipeDetail = () => {
 
   return (
     <div className={styles.recipeDetail}>
-      <div className={styles.recipeDetail__header}>
-        <div
-          className={`${styles.recipeDetail__contain} ${
-            showIngredients || showSteps ? styles.expanded : ""
-          }`}
-        >
-          <img
-            src={recipe.image}
-            alt={recipe.name}
-            className={styles.recipeDetail__image}
-          />
-          <div className={styles.recipeDetail__info}>
-            <h1 className={styles.recipeDetail__name}>{recipe.name}</h1>
-            <h2 className={styles.recipeDetail__subtitle}>{recipe.subtitle}</h2>
-            <div className={styles.recipeDetail__meta}>
-              <p>Servings: {recipe.servings}</p>
-              <p>Time: {recipe.time}</p>
-              <button className={styles.favoriteButton}>찜</button>
-            </div>
-            <div className={styles.recipeDetail__author}>
-              <img
-                src={recipe.author.profileImage}
-                alt={recipe.author.name}
-                className={styles.recipeDetail__authorImage}
-              />
-              <p>{recipe.author.name}</p>
+      <div className={styles.recipeDetail__container}>
+        <div className={styles.recipeDetail__header}>
+          <div
+            className={`${styles.recipeDetail__contain} ${
+              showIngredients || showSteps ? styles.expanded : ""
+            }`}
+          >
+            <img
+              src={recipe.image}
+              alt={recipe.name}
+              className={styles.recipeDetail__image}
+            />
+            <div className={styles.recipeDetail__info}>
+              <h1 className={styles.recipeDetail__name}>{recipe.name}</h1>
+              <h2 className={styles.recipeDetail__subtitle}>
+                {recipe.subtitle}
+              </h2>
+              <div className={styles.recipeDetail__meta}>
+                <p>Servings: {recipe.servings}</p>
+                <p>Time: {recipe.time}</p>
+                <button className={styles.favoriteButton}>찜</button>
+              </div>
+              <div className={styles.recipeDetail__author}>
+                <img
+                  src={recipe.author.profileImage}
+                  alt={recipe.author.name}
+                  className={styles.recipeDetail__authorImage}
+                />
+                <p>{recipe.author.name}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <button className={styles.toggleButton1} onClick={toggleIngredients}>
-        {showIngredients ? "재료 접기" : "재료 펼치기"}
-      </button>
+        <button className={styles.toggleButton} onClick={toggleIngredients}>
+          {showIngredients ? "재료 접기 ▲" : "재료 펼치기 ▼"}
+        </button>
 
-      {showIngredients && (
-        <div className={styles.recipeDetail__sectionIngredients}>
-          <h3>Ingredients</h3>
-          <ul>
-            {recipe.ingredients.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+        {showIngredients && (
+          <div className={styles.recipeDetail__sectionIngredients}>
+            <h3>재료</h3>
+            <ul className={styles.ingredientsList}>
+              {recipe.ingredients.map((ingredient, index) => (
+                <li key={index} className={styles.ingredientItem}>
+                  <span className={styles.ingredientIcon}>✔️</span>
+                  <span className={styles.ingredientText}>{ingredient}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-      <div className={styles.recipeDetail__section}>
         <div className={styles.recipeDetail__sectionSteps}>
           <h3>Steps</h3>
-          <ol>
+          <ol className={styles.centeredList}>
             {recipe.steps.map((step, index) => (
               <li key={index} className={styles.recipeStep}>
                 <p>{step.description}</p>
@@ -113,6 +142,24 @@ const RecipeDetail = () => {
               </li>
             ))}
           </ol>
+        </div>
+
+        {/* 추천 음식 섹션 */}
+        <div className={styles.recommendedFoods}>
+          <h3>추천 음식</h3>
+          <div className={styles.recommendedFoodsList}>
+            {recommendedFoods.map((food, index) => (
+              <div key={index} className={styles.recommendedFood}>
+                <img
+                  src={food.image}
+                  alt={food.name}
+                  className={styles.recommendedFoodImage}
+                />
+                <h4>{food.name}</h4>
+                <p>{food.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

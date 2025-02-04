@@ -1,8 +1,16 @@
 .recipeDetail {
-  max-width: 800px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* 회색 배경 */
+}
+
+.recipeDetail__container {
+  background-color: #fff; /* 흰색 배경 */
   padding: 20px;
-  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .recipeDetail__header {
@@ -97,8 +105,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.favoriteButton,
-.toggleButton {
+.favoriteButton {
   background-color: #ff6347;
   color: white;
   border: none;
@@ -108,20 +115,98 @@
   margin-bottom: 10px;
 }
 
-.favoriteButton:hover,
-.toggleButton:hover {
+.favoriteButton:hover {
   background-color: #ff4500;
 }
 
-.ingredientsList,
-.stepsList {
-  list-style: none;
-  padding: 0;
+.toggleButton {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.ingredientsList li,
-.stepsList li {
+.toggleButton:hover {
+  background-color: #ff4500;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toggleButton:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+// 재료 섹션 스타일
+.recipeDetail__sectionIngredients {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ingredientsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredientItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
   margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ingredientItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ingredientIcon {
+  font-size: 1.2rem;
+  color: #ff6347;
+}
+
+.ingredientText {
+  font-size: 1rem;
+  color: #333;
+}
+
+.recipeStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.centeredList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .stepImage {
@@ -131,10 +216,59 @@
   margin-top: 10px;
 }
 
-.recipeStep {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* 설명과 사진 사이의 간격 조정 */
-  padding: 10px;
+.stepNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6347;
+  min-width: 30px;
+  text-align: right;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepImage {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+// 추천 음식 섹션 스타일
+.recommendedFoods {
+  margin-top: 40px;
+}
+
+.recommendedFoodsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.recommendedFood {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommendedFoodImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
   margin-bottom: 10px;
+}
+
+.recommendedFood h4 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.recommendedFood p {
+  font-size: 0.9rem;
+  color: #666;
 }
