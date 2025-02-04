@@ -1,0 +1,17 @@
+@use "../mixins/flex";
+@use "../mixins/responsive" as *;
+
+.foodSection__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  gap: 30px 30px;
+
+  @include responsive(mobile) {
+    display: block;
+    @include flex.justify-align;
+    padding: 2%;
+  }
+}

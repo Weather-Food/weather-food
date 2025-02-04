@@ -1,0 +1,28 @@
+// default direction value is row
+
+@mixin direction($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin justify($direction: row, $justify: center) {
+  @include direction($direction);
+  justify-content: $justify;
+}
+
+@mixin align($direction: row, $align: center) {
+  @include direction($direction);
+  align-items: $align;
+}
+
+@mixin justify-align($direction: row, $justify: center, $align: center) {
+  @include direction($direction);
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin center($direction: row) {
+  @include direction($direction);
+  justify-content: center;
+  align-items: center;
+}

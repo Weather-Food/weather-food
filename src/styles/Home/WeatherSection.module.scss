@@ -1,0 +1,111 @@
+@use "../mixins/flex";
+
+.weatherContainer {
+  flex: 1;
+  color: white;
+  @include flex.justify(column, space-around);
+  height: 100%;
+  margin: 5%;
+}
+
+.locationTime__container {
+  @include flex.justify-align(row, space-between, center);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.locationContainer {
+  flex: 1;
+  @include flex.align;
+  gap: 10px;
+}
+
+.todayTime {
+  flex: 1;
+  text-align: end;
+}
+
+.temperatureContainer {
+  @include flex.center(column);
+}
+
+.temperature {
+  font-size: 5.5rem;
+  margin: 0;
+}
+
+.temperatureIcon {
+  margin-left: 4px;
+}
+
+.state {
+  font-size: 1.5rem;
+}
+
+.conditionContainer {
+  @include flex.justify(row, space-between);
+  font-size: 1.3rem;
+}
+
+.hpaContainer,
+.pricipitationContainer,
+.windContainer {
+  @include flex.align;
+  gap: 10px;
+}
+
+// 작은 화면
+@media (max-width: 600px) {
+  .weatherContainer {
+    width: 90%;
+  }
+
+  .locationTime__container {
+    font-size: 0.8rem;
+  }
+  .temperature {
+    font-size: 2.7rem;
+  }
+  .state {
+    font-size: 0.9rem;
+  }
+  .conditionContainer {
+    font-size: 0.9rem;
+  }
+
+  .locationIcon,
+  .hpaIcon,
+  .pricipitationIcon,
+  .windIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// 중간 크기 화면
+@media (max-width: 1024px) {
+  .weatherContainer {
+    margin: 3%;
+  }
+
+  .locationTime__container {
+    font-size: 1.2rem;
+  }
+  .temperature {
+    font-size: 3.2rem;
+  }
+  .state {
+    font-size: 1.2rem;
+  }
+  .conditionContainer {
+    font-size: 1.2rem;
+  }
+
+  .locationIcon,
+  .hpaIcon,
+  .pricipitationIcon,
+  .windIcon {
+    width: 25px;
+    height: 25px;
+  }
+}

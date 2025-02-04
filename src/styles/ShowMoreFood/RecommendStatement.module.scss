@@ -1,0 +1,27 @@
+@use "../mixins/flex";
+@use "../mixins/responsive" as *;
+
+.recommendStatement__container {
+  @include flex.justify(row, flex-start);
+  gap: 1%;
+  height: 5%;
+  padding: 2%;
+  background-color: rgb(238, 246, 255);
+  border-radius: 10px;
+
+  @include responsive(mobile) {
+    font-size: 0.9rem;
+    padding: 5%;
+  }
+
+  @include responsive(tablet) {
+    font-size: 0.95rem;
+    padding: 4%;
+  }
+}
+
+.bulbIcon,
+.recommendStatement {
+  font-weight: 600;
+  color: rgb(58, 88, 186);
+}
