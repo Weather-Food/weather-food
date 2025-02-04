@@ -1,0 +1,14 @@
+@use "../mixins/flex";
+@use "../mixins/responsive" as *;
+
+.moreFoodMain {
+  @include flex.direction(column);
+  width: 80%;
+  padding: 2% 4%;
+  gap: 20px;
+
+  @include responsive(mobile) {
+    width: 100%;
+    padding: 0%;
+  }
+}

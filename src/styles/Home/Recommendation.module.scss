@@ -1,8 +1,9 @@
-.recommendation-container {
+@use "../mixins/flex";
+@use "../mixins/responsive" as *;
+
+.recommendationContainer {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include flex.justify(column, center);
   gap: 15px;
   background-color: rgb(250, 250, 250);
   border-radius: 30px;
@@ -11,76 +12,72 @@
 }
 
 .statement {
-  display: flex;
-  align-items: center;
+  @include flex.align;
   font-size: 1.25rem;
   font-weight: 600;
-  // color: rgb(55, 55, 55);
   color: #4b4b4b;
   gap: 10px;
   padding: 3% 5%;
   margin: 0;
 }
 
-.recommended-food--container {
+.recommendedFood__container {
   border-radius: 10px;
   padding: 5%;
   height: 40%;
   background-color: rgb(247, 244, 248);
 }
 
-.more-food--container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.moreFood__container {
+  @include flex.align;
   padding: 3% 5%;
   gap: 10px;
   font-weight: 500;
 }
 
-.more-icon {
+.moreIcon {
   cursor: pointer;
 }
 
 // 작은 화면
 @media (max-width: 600px) {
-  .recommendation-container {
+  .recommendationContainer {
     width: 80%;
     padding: 2%;
   }
   .statement {
     font-size: 0.8rem;
   }
-  .recommended-food--container,
-  .more-food--container {
+  .recommendedFood__container,
+  .moreFood__container {
     font-size: 0.7rem;
   }
-  .more-icon {
+  .moreIcon {
     width: 20px;
     height: 20px;
   }
 
   .statement,
-  .more-food--container {
+  .moreFood__container {
     padding: 1% 3%;
   }
 }
 
 // 중간 크기 화면
 @media (max-width: 1024px) {
-  .recommendation-container {
+  .recommendationContainer {
     margin: 3%;
   }
 
   .statement {
     font-size: 1.1rem;
   }
-  .recommended-food--container,
-  .more-food--container {
+  .recommendedFood__container,
+  .moreFood__container {
     font-size: 0.9rem;
   }
 
-  .more-icon {
+  .moreIcon {
     width: 25px;
     height: 25px;
   }

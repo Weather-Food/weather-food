@@ -1,11 +1,11 @@
-import "../styles/Footer.scss";
+import styles from "../../styles/common/Footer.module.scss";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className={styles.footerContainer}>
       <div className="icons-container"></div>
       <div className="logo-container">Weather</div>
-      <div className="right-container">
+      <div className={styles.rightContainer}>
         <img className="right-icon" />
         <p>2025 Weather. All rights reserved.</p>
       </div>

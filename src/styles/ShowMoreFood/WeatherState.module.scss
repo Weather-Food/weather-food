@@ -1,0 +1,63 @@
+@use "../mixins/flex";
+@use "../mixins/responsive" as *;
+
+.weatherState__container {
+  @include flex.justify-align(row, space-between, center);
+  box-sizing: border-box;
+  height: 7%;
+  padding: 3%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+
+  @include responsive(mobile) {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  @include responsive(tablet) {
+    font-size: 0.9rem;
+  }
+}
+
+.weatherLeftState {
+  @include flex.justify-align(row, space-between, center);
+
+  @include responsive(mobile) {
+    @include flex.justify-align(row, center, center);
+  }
+
+  @include responsive(tablet) {
+    @include flex.justify-align(row, center, center);
+  }
+}
+
+.weatherIcon {
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
+  margin-right: 10px;
+
+  @include responsive(mobile) {
+    width: 50px;
+    height: 50px;
+  }
+
+  @include responsive(tablet) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.temperatureState,
+.weatherRightState {
+  @include flex.direction(column);
+  gap: 10px;
+}
+
+.temp {
+  font-size: 1.25rem;
+
+  @include responsive(mobile) {
+    font-size: 1rem;
+  }
+}

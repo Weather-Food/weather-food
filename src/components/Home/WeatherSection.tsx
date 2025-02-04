@@ -1,42 +1,42 @@
-import "../../styles/Home/WeatherSection.scss";
+import styles from "../../styles/Home/WeatherSection.module.scss";
 
 const WeatherSection = () => {
   return (
-    <section className="weather-container">
-      <div className="location-time--container">
-        <div className="location-container">
+    <section className={styles.weatherContainer}>
+      <div className={styles.locationTime__container}>
+        <div className={styles.locationContainer}>
           <img
-            className="location-icon"
+            className={styles.locationIcon}
             src="./Home/location.svg"
             alt="location"
           />
-          <strong className="location">인천</strong>
+          <strong className={styles.location}>인천광역시</strong>
         </div>
-        <p className="time">Today 12:32 PM</p>
+        <p className={styles.todayTime}>Today 12:32 PM</p>
       </div>
-      <div className="temperature-container">
-        <p className="temperature">
-          11<span className="temperature-icon">°</span>
+      <div className={styles.temperatureContainer}>
+        <p className={styles.temperature}>
+          11<span className={styles.temperatureIcon}>°C</span>
         </p>
-        <p className="state">Rain</p>
+        <p className={styles.state}>흐림</p>
       </div>
-      <div className="condition-container">
-        <div className="hpa-container">
+      <div className={styles.conditionContainer}>
+        <div className={styles.hpaContainer}>
           {/* 여기 hpa 정보는 다른 걸로 대체 예정 */}
-          <img className="hpa-icon" src="./Home/wind.svg" alt="hpa" />
+          <img className={styles.hpaIcon} src="./Home/wind.svg" alt="hpa" />
           <p>720hpa</p>
         </div>
-        <div className="pricipitation-container">
+        <div className={styles.pricipitationContainer}>
           <img
-            className="pricipitation-icon"
+            className={styles.pricipitationIcon}
             src="./Home/raindrop.svg"
             alt="pricipitation"
           />
           <p>32%</p>
         </div>
-        <div className="wind-container">
-          <img className="wind-icon" src="./Home/wind.svg" alt="wind" />
-          <p>12km/h</p>
+        <div className={styles.windContainer}>
+          <img className={styles.windIcon} src="./Home/wind.svg" alt="wind" />
+          <p>3m/s</p>
         </div>
       </div>
     </section>

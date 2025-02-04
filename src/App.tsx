@@ -1,19 +1,14 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import { Header, Footer } from "./components";
-import Hourly from "./pages/hourly/Hourly";
-import ScrollTop from "./components/ScrollTop";
+import { Outlet } from "react-router-dom";
+import ScrollTop from "./components/common/ScrollTop";
+import { Header, Footer } from "./components/common";
 
 const App = () => (
-  <>
+  <div>
     <ScrollTop />
     <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/hourly" element={<Hourly />} />
-    </Routes>
+    <Outlet />
     <Footer />
-  </>
+  </div>
 );
 
 export default App;

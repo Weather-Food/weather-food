@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/Header.scss";
+import styles from "../../styles/common/Header.module.scss";
 import HeaderMenu from "./HeaderMenu";
 import HeaderAuth from "./HeaderAuth";
 
 const Header = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const getActiveClass = ({ isActive }: { isActive: boolean }): string => {
-    return isActive ? "active-tab" : "tab";
+    return isActive ? styles.activeTab : styles.tab;
   };
 
   useEffect(() => {
@@ -17,11 +17,11 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header-container">
+    <div className={styles.headerContainer}>
       <div className="logo-container">
         <p>Weather</p>
       </div>
-      <div className="navigation-container">
+      <div className={styles.navigationContainer}>
         <NavLink to="/" className={getActiveClass}>
           홈
         </NavLink>
