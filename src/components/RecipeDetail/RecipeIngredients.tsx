@@ -1,12 +1,8 @@
 import React from "react";
-import styles from "./RecipeIngredients.module.scss";
+import styles from "../../styles/RecipeDetail/RecipeIngredients.module.scss";
 import { FaCheck } from "react-icons/fa";
-import { recipe } from "./recipe";
-
-interface RecipeIngredientsProps {
-  toggleIngredients: () => void;
-  showIngredients: boolean;
-}
+import { recipe } from "./mockRecipeData";
+import { RecipeIngredientsProps } from "../../interfaces/recipeDetail";
 
 const RecipeIngredients: React.FC<RecipeIngredientsProps> = ({
   toggleIngredients,

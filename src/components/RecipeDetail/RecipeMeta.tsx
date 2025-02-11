@@ -1,9 +1,10 @@
 import React from "react";
-import styles from "./RecipeMeta.module.scss";
+import styles from "../../styles/RecipeDetail/RecipeMeta.module.scss";
 import { CiStar } from "react-icons/ci";
-import { recipe } from "./recipe";
+import { recipe } from "./mockRecipeData";
+import { RecipeMetaProps } from "../../interfaces/recipeDetail";
 
-const RecipeMeta = ({ showIngredients }: any) => {
+const RecipeMeta: React.FC<RecipeMetaProps> = ({ showIngredients }) => {
   return (
     <div className={styles.recipeDetail__header}>
       <div
