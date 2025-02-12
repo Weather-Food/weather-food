@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import styles from "../../styles/RecipeDetail/RecipeDetail.module.scss";
+import styles from "../styles/RecipeDetail/RecipeDetail.module.scss";
 
-import RecipeMeta from "../../components/RecipeDetail/RecipeMeta";
-import RecipeIngredients from "../../components/RecipeDetail/RecipeIngredients";
-import RecipeStepsList from "../../components/RecipeDetail/RecipeStepsList";
-import RecipeRecommendFoodsList from "../../components/RecipeDetail/RecipeRecommendFoodsList";
+import RecipeMeta from "../components/RecipeDetail/RecipeMeta";
+import RecipeIngredients from "../components/RecipeDetail/RecipeIngredients";
+import RecipeStepsList from "../components/RecipeDetail/RecipeStepsList";
+import RecipeRecommendFoodsList from "../components/RecipeDetail/RecipeRecommendFoodsList";
 
 const RecipeDetail = () => {
   const [showIngredients, setShowIngredients] = useState(true);
