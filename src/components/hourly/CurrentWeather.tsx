@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/Hourly/CurrentWeather.module.scss";
-import { CurrentWeatherProps } from "./interfaces";
+import { CurrentWeatherProps } from "../../interfaces/hourly";
 
 export const CurrentWeather: React.FC<CurrentWeatherProps> = ({
   currentWeather,

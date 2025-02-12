@@ -1,0 +1,22 @@
+@use "../../styles/mixins/flex";
+@use "../../styles/mixins/responsive" as *;
+
+.recipeDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.recipeDetail__container {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+
+  @include responsive(mobile) {
+    padding: 10px;
+    max-width: 100%;
+  }
+}

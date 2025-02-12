@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../../styles/Hourly/HourlyWeather.module.scss";
-import { HourlyWeatherProps } from "./interfaces";
+import { HourlyWeatherProps } from "../../interfaces/hourly";
 
 export const HourlyWeather: React.FC<HourlyWeatherProps> = ({
   weatherData,

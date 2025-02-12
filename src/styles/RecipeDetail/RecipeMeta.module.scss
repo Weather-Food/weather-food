@@ -1,0 +1,144 @@
+@use "../../styles/mixins/flex";
+@use "../../styles/mixins/responsive" as *;
+
+.recipeDetail__header {
+  @include flex.align(column, center);
+  text-align: center;
+}
+
+.recipeDetail__contain {
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+
+  @include responsive(mobile) {
+    padding: 10px;
+    max-width: 100%;
+  }
+}
+
+.recipeDetail__contain.expanded {
+  max-height: 1000px;
+}
+
+.recipeDetail__image {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  @include responsive(mobile) {
+    max-width: 65%;
+  }
+}
+
+.recipeDetail__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipeDetail__name {
+  font-size: 2.5rem;
+  margin: 20px 0;
+
+  @include responsive(mobile) {
+    font-size: 2rem;
+  }
+}
+
+.recipeDetail__subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-top: 10px;
+
+  @include responsive(mobile) {
+    font-size: 1.2rem;
+  }
+}
+
+.recipeDetail__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 15px 25px;
+  background-color: #f0f4f8;
+  gap: 15px;
+  color: #333;
+  width: 100%;
+  max-width: 800px;
+
+  @include responsive(mobile) {
+    padding: 10px 15px;
+    max-width: 500px;
+  }
+}
+
+.recipeDetail__servings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    @include responsive(mobile) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.recipeDetail__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include responsive(mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.recipeDetail__authorImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  @include responsive(mobile) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.favoriteButton {
+  background-color: #1470af;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 5px;
+
+  @include responsive(mobile) {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+.favoriteButtonIcon {
+  width: 25px;
+  height: 25px;
+
+  @include responsive(mobile) {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,4 +1,4 @@
-import { WeatherData } from "../../components/hourly/interfaces";
+import { WeatherData } from "../../interfaces/hourly";
 
 export const mockWeatherData: WeatherData[] = [
   {

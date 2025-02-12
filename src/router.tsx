@@ -3,6 +3,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import Hourly from "./pages/hourly/Hourly";
 import ShowMoreFood from "./pages/ShowMoreFood";
+import RecipeDetail from "./pages/RecipeDetail/RecipeDetail";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "more-food",
         element: <ShowMoreFood />,
+      },
+      {
+        path: "recipeDetail",
+        element: <RecipeDetail />,
       },
     ],
   },
