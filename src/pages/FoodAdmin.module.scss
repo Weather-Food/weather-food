@@ -1,0 +1,184 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.adminBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 250px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+  }
+
+  p:first-child {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 10px 0;
+    border: 3px solid #ddd;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+}
+
+.statusBox {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgb(177, 177, 177); // 배경 흰색으로 추가
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statusBox h3 {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.foodTableContainer {
+  width: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255); // 배경 흰색으로 추가
+  padding: 20px;
+
+  .tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #ff5a5f;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+
+  // 승인 여부 드롭다운 스타일
+  .foodTable td select {
+    padding: 6px 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  // 상태별 스타일 적용
+  .foodTable td select {
+    &.pending {
+      background-color: #ffeeba;
+      color: #856404;
+    }
+    &.approved {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    &.rejected {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  }
+
+  .foodTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      border-top: 3px solid #ddd; /* 위쪽 구분선 */
+      border-bottom: 2px solid #ddd; /* 아래쪽 구분선 */
+    }
+
+    tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:last-child {
+      border-bottom: none;
+    }
+
+    .userCell {
+      display: flex;
+      align-items: center;
+      gap: 10px; // 이미지와 이름 사이 간격
+      padding: 12px;
+      justify-content: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}
