@@ -1,8 +1,24 @@
 import React, { useState } from "react";
 import styles from "./FoodAdmin.module.scss"; // SCSS 모듈 import
+import { IoMdDoneAll } from "react-icons/io";
+import { TbCancel } from "react-icons/tb";
+import { FaHourglass } from "react-icons/fa6";
+
+interface FoodItem {
+  userProfile: string;
+  userName: string;
+  foodName: string;
+  status: "미승인" | "승인됨" | "거절됨";
+  date: string;
+  weather: string;
+  category: string;
+}
 
 const FoodAdmin = () => {
   // 예시 데이터
+
+  const [sortOption, setSortOption] = useState<string>("미승인");
+
   const adminInfo = {
     name: "관리자 이름",
     profileImage: "/RecipeDetail/food.jpg", // 프로필 이미지 URL
@@ -15,13 +31,15 @@ const FoodAdmin = () => {
     rejected: 2,
   });
 
-  const [recommendedFoods, setRecommendedFoods] = useState([
+  const [recommendedFoods, setRecommendedFoods] = useState<FoodItem[]>([
     {
       userProfile: "/RecipeDetail/food.jpg",
       userName: "사용자1",
       foodName: "피자",
       status: "승인됨",
       date: "2023-10-01",
+      weather: "맑음",
+      category: "이탈리안",
     },
     {
       userProfile: "/RecipeDetail/food.jpg",
@@ -29,6 +47,8 @@ const FoodAdmin = () => {
       foodName: "스시",
       status: "미승인",
       date: "2023-10-02",
+      weather: "비",
+      category: "일식",
     },
     {
       userProfile: "/RecipeDetail/food.jpg",
@@ -36,6 +56,8 @@ const FoodAdmin = () => {
       foodName: "파스타",
       status: "거절됨",
       date: "2023-10-03",
+      weather: "흐림",
+      category: "이탈리안",
     },
   ]);
 
@@ -55,10 +77,17 @@ const FoodAdmin = () => {
     setFoodStatus(newFoodStatus);
   };
 
-  const handleSort = () => {
+  const handleSort = (option: string) => {
+    setSortOption(option);
     const sortedFoods = [...recommendedFoods].sort((a, b) => {
-      if (a.status < b.status) return -1;
-      if (a.status > b.status) return 1;
+      if (option === "미승인" || option === "승인됨" || option === "거절됨") {
+        if (a.status === option && b.status !== option) return -1;
+        if (a.status !== option && b.status === option) return 1;
+      } else if (option === "최신순") {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      } else if (option === "오래된순") {
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+      }
       return 0;
     });
     setRecommendedFoods(sortedFoods);
@@ -81,14 +110,17 @@ const FoodAdmin = () => {
           <h3>추천 음식 상태</h3>
           <div className={styles.statusGrid}>
             <div className={styles.statusItem}>
+              <FaHourglass />
               <span>미승인</span>
               <strong>{foodStatus.pending}</strong>
             </div>
             <div className={styles.statusItem}>
+              <IoMdDoneAll />
               <span>승인됨</span>
               <strong>{foodStatus.approved}</strong>
             </div>
             <div className={styles.statusItem}>
+              <TbCancel />
               <span>거절됨</span>
               <strong>{foodStatus.rejected}</strong>
             </div>
@@ -101,7 +133,17 @@ const FoodAdmin = () => {
         {/* 테이블 헤더 */}
         <div className={styles.tableHeader}>
           <h3>추천 음식 목록</h3>
-          <button onClick={handleSort}>승인 여부로 정렬</button>
+          <select
+            className={styles.sortSelect}
+            onChange={(e) => handleSort(e.target.value)}
+            value={sortOption}
+          >
+            <option value="최신순">최신순</option>
+            <option value="오래된순">오래된순</option>
+            <option value="미승인">미승인</option>
+            <option value="승인됨">승인됨</option>
+            <option value="거절됨">거절됨</option>
+          </select>
         </div>
 
         {/* 테이블 */}
@@ -110,6 +152,8 @@ const FoodAdmin = () => {
             <tr>
               <th>유저</th>
               <th>추천 음식</th>
+              <th>날씨</th>
+              <th>카테고리</th>
               <th>승인 여부</th>
               <th>추천 날짜</th>
             </tr>
@@ -122,6 +166,8 @@ const FoodAdmin = () => {
                   <span>{food.userName}</span>
                 </td>
                 <td>{food.foodName}</td>
+                <td>{food.weather}</td>
+                <td>{food.category}</td>
                 <td>
                   <select
                     value={food.status}
