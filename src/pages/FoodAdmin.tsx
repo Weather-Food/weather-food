@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./FoodAdmin.module.scss"; // SCSS 모듈 import
+import styles from "./FoodAdmin.module.scss";
 import { IoMdDoneAll } from "react-icons/io";
 import { TbCancel } from "react-icons/tb";
 import { FaHourglass } from "react-icons/fa6";
@@ -15,13 +15,11 @@ interface FoodItem {
 }
 
 const FoodAdmin = () => {
-  // 예시 데이터
-
   const [sortOption, setSortOption] = useState<string>("미승인");
 
   const adminInfo = {
     name: "관리자 이름",
-    profileImage: "/RecipeDetail/food.jpg", // 프로필 이미지 URL
+    profileImage: "/RecipeDetail/food.jpg",
     email: "admin@example.com",
   };
 
@@ -107,7 +105,10 @@ const FoodAdmin = () => {
 
         {/* 음식 상태 박스 */}
         <div className={styles.statusBox}>
-          <h3>추천 음식 상태</h3>
+          <div className={styles.statusHeader}>
+            <h3>추천 음식 상태</h3>
+          </div>
+
           <div className={styles.statusGrid}>
             <div className={styles.statusItem}>
               <FaHourglass />

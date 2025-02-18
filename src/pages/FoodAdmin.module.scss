@@ -1,9 +1,16 @@
+@use "../styles/mixins/flex";
+@use "../styles/mixins/responsive" as *;
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   background-color: #f0f0f0;
+
+  @include responsive(mobile) {
+    align-items: normal;
+  }
 }
 
 .section {
@@ -13,6 +20,11 @@
   max-width: 900px;
   margin-bottom: 20px;
   gap: 20px;
+
+  @include responsive(mobile) {
+    align-items: center;
+    width: 90%;
+  }
 }
 
 .adminBox {
@@ -49,6 +61,25 @@
     font-size: 20px;
     margin: 5px 0;
   }
+
+  @include responsive(mobile) {
+    width: 35%;
+    padding: 10px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+    h3 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 12px;
+    }
+    p:first-child {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
 }
 
 .statusBox {
@@ -62,13 +93,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include responsive(mobile) {
+    padding: 15px;
+    align-items: flex-start;
+  }
 }
 
-.statusBox h3 {
-  color: #444;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 30px;
+.statusHeader {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  h3 {
+    color: #444;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+    @include responsive(mobile) {
+      font-size: 1.2rem;
+      margin: 12px;
+    }
+  }
 }
 
 .statusGrid {
@@ -77,6 +124,10 @@
   gap: 20px;
   width: 100%;
   max-width: 600px;
+
+  @include responsive(mobile) {
+    gap: 10px;
+  }
 }
 
 .statusItem {
@@ -88,6 +139,11 @@
   background-color: #f9f9f9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  @include responsive(mobile) {
+    padding: 15px;
+    width: 60px;
+  }
 }
 
 .statusItem:hover {
@@ -99,18 +155,32 @@
   font-size: 2rem;
   margin-bottom: 15px;
   color: #555;
+
+  @include responsive(mobile) {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
 }
 
 .statusItem span {
   font-size: 1.1rem;
   color: #666;
   margin-bottom: 10px;
+
+  @include responsive(mobile) {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
 }
 
 .statusItem strong {
   font-size: 1.5rem;
   color: #333;
   font-weight: bold;
+
+  @include responsive(mobile) {
+    font-size: 1.2rem;
+  }
 }
 
 .foodTableContainer {
@@ -121,11 +191,20 @@
   background: rgb(255, 255, 255);
   padding: 20px;
 
+  @include responsive(mobile) {
+    width: 85%;
+    padding: 15px;
+  }
+
   .tableHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
+
+    @include responsive(mobile) {
+      padding: 12px;
+    }
 
     .sortSelect {
       padding: 6px 8px;
@@ -135,6 +214,11 @@
       background-color: white;
       cursor: pointer;
       transition: all 0.2s;
+
+      @include responsive(mobile) {
+        font-size: 12px;
+        padding: 5px 7px;
+      }
     }
   }
 
@@ -147,6 +231,11 @@
     background-color: white;
     cursor: pointer;
     transition: all 0.2s;
+
+    @include responsive(mobile) {
+      font-size: x-small;
+      padding: 5px 7px;
+    }
   }
 
   // 상태별 스타일 적용
@@ -173,11 +262,20 @@
     td {
       padding: 12px;
       text-align: center;
+
+      @include responsive(mobile) {
+        padding: 8px;
+        font-size: x-small;
+      }
     }
 
     th {
       border-top: 3px solid #ddd;
       border-bottom: 2px solid #ddd;
+
+      @include responsive(mobile) {
+        font-size: x-small;
+      }
     }
 
     tr {
@@ -195,14 +293,27 @@
       padding: 12px;
       justify-content: center;
 
+      @include responsive(mobile) {
+        padding: 8px;
+      }
+
       img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
+
+        @include responsive(mobile) {
+          width: 30px;
+          height: 30px;
+        }
       }
 
       span {
         font-weight: 500;
+
+        @include responsive(mobile) {
+          font-size: x-small;
+        }
       }
     }
   }
