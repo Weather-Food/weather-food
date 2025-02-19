@@ -1,0 +1,166 @@
+@use "../../styles/mixins/flex";
+@use "../../styles/mixins/responsive" as *;
+
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+  gap: 20px;
+
+  @include responsive(mobile) {
+    align-items: center;
+    width: 90%;
+  }
+}
+
+.adminBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 250px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+  }
+
+  p:first-child {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 10px 0;
+    border: 3px solid #ddd;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+
+  @include responsive(mobile) {
+    width: 35%;
+    padding: 10px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+    h3 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 12px;
+    }
+    p:first-child {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+}
+
+.statusBox {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include responsive(mobile) {
+    padding: 15px;
+    align-items: flex-start;
+  }
+}
+
+.statusHeader {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  h3 {
+    color: #444;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+    @include responsive(mobile) {
+      font-size: 1.2rem;
+      margin: 12px;
+    }
+  }
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+
+  @include responsive(mobile) {
+    gap: 10px;
+  }
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  @include responsive(mobile) {
+    padding: 15px;
+    width: 60px;
+  }
+}
+
+.statusItem svg {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #555;
+
+  @include responsive(mobile) {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+}
+
+.statusItem span {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 10px;
+
+  @include responsive(mobile) {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+}
+
+.statusItem strong {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+
+  @include responsive(mobile) {
+    font-size: 1.2rem;
+  }
+}

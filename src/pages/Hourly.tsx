@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/Hourly/Hourly.module.scss";
-import { CurrentWeather } from "../../components/hourly/CurrentWeather";
-import { HourlyWeather } from "../../components/hourly/HourlyWeather";
-import { WeatherData } from "../../interfaces/hourly";
-import { mockWeatherData } from "./mockWeatherData";
+import styles from "../styles/Hourly/Hourly.module.scss";
+import { CurrentWeather } from "../components/hourly/CurrentWeather";
+import { HourlyWeather } from "../components/hourly/HourlyWeather";
+import { WeatherData } from "../interfaces/hourly";
+import { mockWeatherData } from "../components/hourly/mockWeatherData";
 
 const Hourly: React.FC = () => {
   const [weatherData, setWeatherData] = useState<WeatherData[]>([]);

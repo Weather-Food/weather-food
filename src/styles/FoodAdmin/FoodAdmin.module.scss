@@ -1,0 +1,14 @@
+@use "../../styles/mixins/flex";
+@use "../../styles/mixins/responsive" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+
+  @include responsive(mobile) {
+    align-items: normal;
+  }
+}
