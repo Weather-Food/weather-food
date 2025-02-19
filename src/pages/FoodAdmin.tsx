@@ -1,27 +1,17 @@
 import React, { useState } from "react";
 import styles from "./FoodAdmin.module.scss";
-import { IoMdDoneAll } from "react-icons/io";
-import { TbCancel } from "react-icons/tb";
-import { FaHourglass } from "react-icons/fa6";
-
-interface FoodItem {
-  userProfile: string;
-  userName: string;
-  foodName: string;
-  status: "미승인" | "승인됨" | "거절됨";
-  date: string;
-  weather: string;
-  category: string;
-}
+import { AdminSection } from "../components/FoodAdmin/AdminSection";
+import { FoodTableContainer } from "../components/FoodAdmin/FoodTableContainer";
+import { AdminInfo, FoodItem } from "../interfaces/foodAdmin";
 
 const FoodAdmin = () => {
   const [sortOption, setSortOption] = useState<string>("미승인");
 
-  const adminInfo = {
+  const [adminInfo] = useState<AdminInfo>({
     name: "관리자 이름",
     profileImage: "/RecipeDetail/food.jpg",
     email: "admin@example.com",
-  };
+  });
 
   const [foodStatus, setFoodStatus] = useState({
     pending: 5,
@@ -94,102 +84,14 @@ const FoodAdmin = () => {
   return (
     <div className={styles.container}>
       {/* 첫 번째 부분: 관리자 정보와 음식 상태 박스 */}
-      <div className={styles.section}>
-        {/* 관리자 정보 박스 */}
-        <div className={styles.adminBox}>
-          <p>관리자</p>
-          <img src={adminInfo.profileImage} alt="Profile" />
-          <h3>{adminInfo.name}</h3>
-          <p>{adminInfo.email}</p>
-        </div>
-
-        {/* 음식 상태 박스 */}
-        <div className={styles.statusBox}>
-          <div className={styles.statusHeader}>
-            <h3>추천 음식 상태</h3>
-          </div>
-
-          <div className={styles.statusGrid}>
-            <div className={styles.statusItem}>
-              <FaHourglass />
-              <span>미승인</span>
-              <strong>{foodStatus.pending}</strong>
-            </div>
-            <div className={styles.statusItem}>
-              <IoMdDoneAll />
-              <span>승인됨</span>
-              <strong>{foodStatus.approved}</strong>
-            </div>
-            <div className={styles.statusItem}>
-              <TbCancel />
-              <span>거절됨</span>
-              <strong>{foodStatus.rejected}</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <AdminSection adminInfo={adminInfo} foodStatus={foodStatus} />
       {/* 두 번째 부분: 추천 음식 목록 표 */}
-      <div className={styles.foodTableContainer}>
-        {/* 테이블 헤더 */}
-        <div className={styles.tableHeader}>
-          <h3>추천 음식 목록</h3>
-          <select
-            className={styles.sortSelect}
-            onChange={(e) => handleSort(e.target.value)}
-            value={sortOption}
-          >
-            <option value="최신순">최신순</option>
-            <option value="오래된순">오래된순</option>
-            <option value="미승인">미승인</option>
-            <option value="승인됨">승인됨</option>
-            <option value="거절됨">거절됨</option>
-          </select>
-        </div>
-
-        {/* 테이블 */}
-        <table className={styles.foodTable}>
-          <thead>
-            <tr>
-              <th>유저</th>
-              <th>추천 음식</th>
-              <th>날씨</th>
-              <th>카테고리</th>
-              <th>승인 여부</th>
-              <th>추천 날짜</th>
-            </tr>
-          </thead>
-          <tbody>
-            {recommendedFoods.map((food, index) => (
-              <tr key={index}>
-                <td className={styles.userCell}>
-                  <img src={food.userProfile} alt="User Profile" />
-                  <span>{food.userName}</span>
-                </td>
-                <td>{food.foodName}</td>
-                <td>{food.weather}</td>
-                <td>{food.category}</td>
-                <td>
-                  <select
-                    value={food.status}
-                    onChange={(e) =>
-                      handleStatusChange(
-                        index,
-                        e.target.value as "미승인" | "승인됨" | "거절됨"
-                      )
-                    }
-                  >
-                    <option value="미승인">미승인</option>
-                    <option value="승인됨">승인됨</option>
-                    <option value="거절됨">거절됨</option>
-                  </select>
-                </td>
-                <td>{food.date}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <FoodTableContainer
+        handleSort={handleSort}
+        sortOption={sortOption}
+        recommendedFoods={recommendedFoods}
+        handleStatusChange={handleStatusChange}
+      />
     </div>
   );
 };

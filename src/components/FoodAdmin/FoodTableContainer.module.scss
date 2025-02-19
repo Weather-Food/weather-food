@@ -1,0 +1,138 @@
+@use "../../styles/mixins/flex";
+@use "../../styles/mixins/responsive" as *;
+
+.foodTableContainer {
+  width: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
+  padding: 20px;
+
+  @include responsive(mobile) {
+    width: 85%;
+    padding: 15px;
+  }
+
+  .tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    @include responsive(mobile) {
+      padding: 12px;
+    }
+
+    .sortSelect {
+      padding: 6px 8px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      @include responsive(mobile) {
+        font-size: 12px;
+        padding: 5px 7px;
+      }
+    }
+  }
+
+  // 승인 여부 드롭다운 스타일
+  .foodTable td select {
+    padding: 6px 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    @include responsive(mobile) {
+      font-size: x-small;
+      padding: 5px 7px;
+    }
+  }
+
+  // 상태별 스타일 적용
+  .foodTable td select {
+    &.pending {
+      background-color: #ffeeba;
+      color: #856404;
+    }
+    &.approved {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    &.rejected {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  }
+
+  .foodTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 12px;
+      text-align: center;
+
+      @include responsive(mobile) {
+        padding: 8px;
+        font-size: x-small;
+      }
+    }
+
+    th {
+      border-top: 3px solid #ddd;
+      border-bottom: 2px solid #ddd;
+
+      @include responsive(mobile) {
+        font-size: x-small;
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:last-child {
+      border-bottom: none;
+    }
+
+    .userCell {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      justify-content: center;
+
+      @include responsive(mobile) {
+        padding: 8px;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+
+        @include responsive(mobile) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      span {
+        font-weight: 500;
+
+        @include responsive(mobile) {
+          font-size: x-small;
+        }
+      }
+    }
+  }
+}
