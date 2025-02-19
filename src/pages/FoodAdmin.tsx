@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./FoodAdmin.module.scss";
+import styles from "../styles/FoodAdmin/FoodAdmin.module.scss";
 import { AdminSection } from "../components/FoodAdmin/AdminSection";
 import { FoodTableContainer } from "../components/FoodAdmin/FoodTableContainer";
 import { AdminInfo, FoodItem } from "../interfaces/foodAdmin";

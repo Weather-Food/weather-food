@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FoodTableContainer.module.scss";
+import styles from "../../styles/FoodAdmin/FoodTableContainer.module.scss";
 import { FoodTableContainerProps } from "../../interfaces/foodAdmin";
 
 export const FoodTableContainer: React.FC<FoodTableContainerProps> = ({
@@ -10,7 +10,6 @@ export const FoodTableContainer: React.FC<FoodTableContainerProps> = ({
 }) => {
   return (
     <div className={styles.foodTableContainer}>
-      {/* 테이블 헤더 */}
       <div className={styles.tableHeader}>
         <h3>추천 음식 목록</h3>
         <select

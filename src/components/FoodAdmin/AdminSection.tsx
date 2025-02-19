@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./AdminSection.module.scss";
+import styles from "../../styles/FoodAdmin/AdminSection.module.scss";
 import { IoMdDoneAll } from "react-icons/io";
 import { TbCancel } from "react-icons/tb";
 import { FaHourglass } from "react-icons/fa6";

@@ -1,5 +1,5 @@
-@use "../styles/mixins/flex";
-@use "../styles/mixins/responsive" as *;
+@use "../../styles/mixins/flex";
+@use "../../styles/mixins/responsive" as *;
 
 .container {
   display: flex;
